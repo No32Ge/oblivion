@@ -1,0 +1,126 @@
+[
+  {
+    "timestamp": "2025-04-24T15:18:43.323591",
+    "role": "user",
+    "content": "prison music",
+    "content_hash": 6699254316306990043
+  },
+  {
+    "timestamp": "2025-04-24T15:18:52.031057",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_317d22dd-ff66-4c2c-9713-2d89e22c30c3",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"play\",\"file\":\"music/G Herbo _ Lil Uzi Vert _ Juice WRLD _ Chance the Rapper - PTSD (Explicit).ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:18:52.031057",
+    "role": "tool",
+    "tool_call_id": "call_0_317d22dd-ff66-4c2c-9713-2d89e22c30c3",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T15:19:06.228620",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T15:19:13.097545",
+    "role": "user",
+    "content": "now stop at that shit",
+    "content_hash": 9187377705395248480
+  },
+  {
+    "timestamp": "2025-04-24T15:19:20.105118",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_dedbbd09-5e31-414a-8f1a-5b5abaf55aaf",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"stop\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:19:20.105118",
+    "role": "tool",
+    "tool_call_id": "call_0_dedbbd09-5e31-414a-8f1a-5b5abaf55aaf",
+    "content": "音乐停止: 音乐停止"
+  },
+  {
+    "timestamp": "2025-04-24T15:19:38.964036",
+    "role": "user",
+    "content": "continue their shit",
+    "content_hash": 8008811293026233388
+  },
+  {
+    "timestamp": "2025-04-24T15:19:46.554577",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_253cb7ce-605a-46b0-98d8-c8a396986f95",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"continue\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:19:46.554577",
+    "role": "tool",
+    "tool_call_id": "call_0_253cb7ce-605a-46b0-98d8-c8a396986f95",
+    "content": "没有暂停的音乐，无法继续播放"
+  },
+  {
+    "timestamp": "2025-04-24T15:20:12.072267",
+    "role": "user",
+    "content": "this fucking guy the it's fucking",
+    "content_hash": -7220198683881607657
+  },
+  {
+    "timestamp": "2025-04-24T15:20:27.596656",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_47dc7344-a183-4aa4-b388-51a18de72c6c",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"I'm not sure what you're referring to. Could you clarify?\",\"voice_key\":\"en_male\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:20:27.596656",
+    "role": "tool",
+    "tool_call_id": "call_0_47dc7344-a183-4aa4-b388-51a18de72c6c",
+    "content": "说话成功: 正在说话: I'm not sure what you're referring to. Could you clarify?"
+  },
+  {
+    "timestamp": "2025-04-24T15:20:39.202631",
+    "role": "assistant",
+    "content": "I'm not sure what you're referring to. Could you clarify?",
+    "content_hash": -3194594047067343920
+  }
+]

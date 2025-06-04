@@ -1,0 +1,53 @@
+在 `main_AI.py` 文件中，`call` 模块的功能目前还没有被完全集成到主流程中。以下是具体的修改步骤：
+
+### 1. **导入 `CallManager`**
+在 `main_AI.py` 的顶部，添加以下导入语句：
+```python
+from auto_.call.call_manager import CallManager
+```
+
+### 2. **初始化 `CallManager`**
+在 `main_AI.py` 的初始化部分（通常在 `local_engine` 和 `core` 初始化之后），添加 `CallManager` 的初始化：
+```python
+call_manager = CallManager()
+```
+
+### 3. **修改 `run_conversation` 函数**
+在 `run_conversation` 函数中，找到工具调用的部分（通常是 `if tool_calls:` 的代码块），修改为以下内容：
+```python
+if tool_calls:
+    for call in tool_calls:
+        tool_name = call.function.name
+        arguments = json.loads(call.function.arguments)
+        if tool_name == "play_music":
+            result = call_manager.execute_tool(tool_name, arguments)
+        else:
+            result = local_engine.execute_tool(tool_name, arguments)
+        chat_manager.add_tool_call(tool_name, arguments, result)
+```
+
+### 4. **测试功能**
+运行 `main_AI.py` 并测试音乐播放功能是否正常工作。例如，发送以下请求：
+```json
+{
+  "tool_calls": [
+    {
+      "id": "call_music_001",
+      "type": "function",
+      "function": {
+        "name": "play_music",
+        "arguments": "{\"file\": \"Grimes - Oblivion.ogg\", \"volume\": 0.5}"
+      }
+    }
+  ]
+}
+```
+
+### 5. **保存修改**
+确保所有修改保存后，重新启动程序以应用更改。
+
+### 文件路径
+- `CallManager` 的代码位于：`auto_/call/call_manager.py`
+- `main_AI.py` 的路径为：`auto_/main_AI.py`
+
+如果需要进一步调整或扩展功能，可以随时告诉我！

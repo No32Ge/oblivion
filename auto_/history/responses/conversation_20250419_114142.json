@@ -1,0 +1,212 @@
+[
+  {
+    "timestamp": "2025-04-19T11:41:53.310387",
+    "role": "user",
+    "content": "你好",
+    "content_hash": 1852540411242923767
+  },
+  {
+    "timestamp": "2025-04-19T11:41:57.022858",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781452645648766439",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"你好！\", \"voice_key\": \"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:41:57.022858",
+    "role": "tool",
+    "tool_call_id": "call_-8781452645648766439",
+    "content": "说话成功: 正在说话: 你好！"
+  },
+  {
+    "timestamp": "2025-04-19T11:42:03.323998",
+    "role": "assistant",
+    "content": "你好！有什么我可以帮助的吗？如果你想要播放音乐，可以告诉我哦！",
+    "content_hash": -1487597495889131773
+  },
+  {
+    "timestamp": "2025-04-19T11:44:09.037424",
+    "role": "user",
+    "content": "你叫什么名字",
+    "content_hash": 8847026434458409455
+  },
+  {
+    "timestamp": "2025-04-19T11:44:16.087086",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781454672873682723",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"我叫遗忘，是一个自我进化的AI助手。\", \"voice_key\": \"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:44:16.087086",
+    "role": "tool",
+    "tool_call_id": "call_-8781454672873682723",
+    "content": "说话成功: 正在说话: 我叫遗忘，是一个自我..."
+  },
+  {
+    "timestamp": "2025-04-19T11:44:23.043537",
+    "role": "assistant",
+    "content": "我叫遗忘，是一个自我进化的AI助手。有什么我可以帮助的吗？如果你想要播放音乐，可以告诉我哦！",
+    "content_hash": 6800922082150668843
+  },
+  {
+    "timestamp": "2025-04-19T11:44:26.115729",
+    "role": "user",
+    "content": "放首歌",
+    "content_hash": -4134454208298120570
+  },
+  {
+    "timestamp": "2025-04-19T11:44:27.657768",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781439829464725408",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"/root/music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:44:27.657768",
+    "role": "tool",
+    "tool_call_id": "call_-8781439829464725408",
+    "content": "音乐控制失败: No such file or directory: 'D:/root/music/2Pac _ Eminem - Bullet to the Brain.ogg'."
+  },
+  {
+    "timestamp": "2025-04-19T11:44:34.362530",
+    "role": "assistant",
+    "content": null,
+    "content_hash": -9223363242610997377
+  },
+  {
+    "timestamp": "2025-04-19T11:44:44.131722",
+    "role": "user",
+    "content": "不要/root",
+    "content_hash": -2388745276535060267
+  },
+  {
+    "timestamp": "2025-04-19T11:44:45.701560",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781459551957070915",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:44:45.701560",
+    "role": "tool",
+    "tool_call_id": "call_-8781459551957070915",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-19T11:44:52.185665",
+    "role": "assistant",
+    "content": "音乐已经播放了，希望你喜欢这首歌！如果你有其他需求，随时告诉我。",
+    "content_hash": -3848581048063208924
+  },
+  {
+    "timestamp": "2025-04-19T11:44:55.436616",
+    "role": "user",
+    "content": "暂停歌曲",
+    "content_hash": -753300603601463800
+  },
+  {
+    "timestamp": "2025-04-19T11:44:56.324356",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781462197657319002",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"pause\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:44:56.324356",
+    "role": "tool",
+    "tool_call_id": "call_-8781462197657319002",
+    "content": "音乐暂停: 音乐暂停"
+  },
+  {
+    "timestamp": "2025-04-19T11:45:02.770386",
+    "role": "assistant",
+    "content": "歌曲已经暂停了。如果你需要继续播放或其他操作，请告诉我。",
+    "content_hash": 6440771083216612257
+  },
+  {
+    "timestamp": "2025-04-19T11:45:09.824123",
+    "role": "user",
+    "content": "继续播放",
+    "content_hash": -1200717431618509727
+  },
+  {
+    "timestamp": "2025-04-19T11:45:10.868178",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781458830402500317",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"continue\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:45:10.868178",
+    "role": "tool",
+    "tool_call_id": "call_-8781458830402500317",
+    "content": "继续播放: 继续播放"
+  },
+  {
+    "timestamp": "2025-04-19T11:45:17.575677",
+    "role": "assistant",
+    "content": "歌曲已经继续播放了。享受音乐吧！如果有其他需求，随时告诉我。",
+    "content_hash": -2093154041001152007
+  },
+  {
+    "timestamp": "2025-04-19T11:45:17.577715",
+    "role": "user",
+    "content": "",
+    "content_hash": 0
+  }
+]

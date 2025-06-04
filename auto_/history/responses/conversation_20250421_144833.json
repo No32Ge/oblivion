@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-04-21T14:48:36.038955",
+    "role": "user",
+    "content": ".",
+    "content_hash": -5226791393377849504
+  },
+  {
+    "timestamp": "2025-04-21T14:49:23.620320",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_1cc444ff-5479-4907-b3b2-afe66272d51d",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"你好，我是一个自我进化者，名字叫遗忘。请问有什么可以帮您的吗？\",\"voice_key\":\"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T14:49:23.620320",
+    "role": "tool",
+    "tool_call_id": "call_0_1cc444ff-5479-4907-b3b2-afe66272d51d",
+    "content": "说话成功: 正在说话: 你好，我是一个自我进..."
+  },
+  {
+    "timestamp": "2025-04-21T14:49:43.518815",
+    "role": "assistant",
+    "content": "你好，我是一个自我进化者，名字叫遗忘。请问有什么可以帮您的吗？",
+    "content_hash": -7944514369897906873
+  }
+]

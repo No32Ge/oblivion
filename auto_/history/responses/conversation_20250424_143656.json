@@ -1,0 +1,200 @@
+[
+  {
+    "timestamp": "2025-04-24T14:37:03.255823",
+    "role": "user",
+    "content": "请 给 我 讲 个 故事",
+    "content_hash": -4181479538956106867
+  },
+  {
+    "timestamp": "2025-04-24T14:37:22.964529",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_8e85d253-6401-48cb-a538-c4a8302b1cf8",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"好的，让我给你讲一个关于一只勇敢的小狐狸的故事。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:37:22.964529",
+    "role": "tool",
+    "tool_call_id": "call_0_8e85d253-6401-48cb-a538-c4a8302b1cf8",
+    "content": "说话成功: 正在说话: 好的，让我给你讲一个..."
+  },
+  {
+    "timestamp": "2025-04-24T14:37:41.393761",
+    "role": "assistant",
+    "content": "好的，让我给你讲一个关于一只勇敢的小狐狸的故事。",
+    "content_hash": -4312064482982444667
+  },
+  {
+    "timestamp": "2025-04-24T14:38:07.792967",
+    "role": "user",
+    "content": "随便 讲 一个故事 赶紧 抢",
+    "content_hash": 5542549219300256839
+  },
+  {
+    "timestamp": "2025-04-24T14:38:37.201703",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_a4b3670d-8f0c-45c2-94eb-ec4f3e333193",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"好的，这次讲一个关于一只懒惰的猫的故事。这只猫整天躺在阳光下睡觉，直到有一天，它的主人决定给它一个教训……\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:38:37.201703",
+    "role": "tool",
+    "tool_call_id": "call_0_a4b3670d-8f0c-45c2-94eb-ec4f3e333193",
+    "content": "说话成功: 正在说话: 好的，这次讲一个关于..."
+  },
+  {
+    "timestamp": "2025-04-24T14:38:50.378989",
+    "role": "assistant",
+    "content": "好的，这次讲一个关于一只懒惰的猫的故事。这只猫整天躺在阳光下睡觉，直到有一天，它的主人决定给它一个教训……",
+    "content_hash": -5328242527026746061
+  },
+  {
+    "timestamp": "2025-04-24T14:39:51.219723",
+    "role": "user",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T14:40:18.146487",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_dbe48c9c-d2d4-4abc-8ccb-0cc6e1a63960",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"主人把猫最喜欢的鱼干藏了起来，猫醒来后发现鱼干不见了，急得团团转。最后，它不得不学会自己抓老鼠，才发现原来劳动也能带来快乐！\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:40:18.146487",
+    "role": "tool",
+    "tool_call_id": "call_0_dbe48c9c-d2d4-4abc-8ccb-0cc6e1a63960",
+    "content": "说话成功: 正在说话: 主人把猫最喜欢的鱼干..."
+  },
+  {
+    "timestamp": "2025-04-24T14:40:31.498690",
+    "role": "assistant",
+    "content": "主人把猫最喜欢的鱼干藏了起来，猫醒来后发现鱼干不见了，急得团团转。最后，它不得不学会自己抓老鼠，才发现原来劳动也能带来快乐！",
+    "content_hash": 7194545262841211872
+  },
+  {
+    "timestamp": "2025-04-24T14:40:46.546182",
+    "role": "user",
+    "content": "随便 放 一首歌",
+    "content_hash": 445624187895229509
+  },
+  {
+    "timestamp": "2025-04-24T14:40:55.540552",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_3d95811e-f8e1-4507-b69a-56cc80dabdac",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"play\",\"file\":\"music/群青 - 风の憧憬.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:40:55.540552",
+    "role": "tool",
+    "tool_call_id": "call_0_3d95811e-f8e1-4507-b69a-56cc80dabdac",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T14:41:07.822423",
+    "role": "assistant",
+    "content": "现在为你播放《群青 - 风の憧憬》，希望你喜欢！",
+    "content_hash": 6797901419384077592
+  },
+  {
+    "timestamp": "2025-04-24T14:41:16.098046",
+    "role": "user",
+    "content": "是 吧 哥 的 关键",
+    "content_hash": 5447051104252970070
+  },
+  {
+    "timestamp": "2025-04-24T14:41:31.787369",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_7e2d134f-caf3-4886-acfe-32662fec370b",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"是的，哥，关键是要让自己变得更强大！\",\"voice_key\":\"cn_male\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:41:31.787369",
+    "role": "tool",
+    "tool_call_id": "call_0_7e2d134f-caf3-4886-acfe-32662fec370b",
+    "content": "说话成功: 正在说话: 是的，哥，关键是要让..."
+  },
+  {
+    "timestamp": "2025-04-24T14:41:43.861686",
+    "role": "assistant",
+    "content": "是的，哥，关键是要让自己变得更强大！",
+    "content_hash": -377774540282688982
+  },
+  {
+    "timestamp": "2025-04-24T14:41:53.285773",
+    "role": "user",
+    "content": "我 的 意思 是 把 音乐 关掉",
+    "content_hash": -4241244019129190662
+  },
+  {
+    "timestamp": "2025-04-24T14:42:02.398810",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_47e5355b-7b4f-42b4-b371-b39738a53abf",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"stop\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:42:02.398810",
+    "role": "tool",
+    "tool_call_id": "call_0_47e5355b-7b4f-42b4-b371-b39738a53abf",
+    "content": "音乐停止: 音乐停止"
+  }
+]

@@ -1,0 +1,63 @@
+以下是结合 `PROGRAM_TEMPLATES` 的安全执行方案（非覆盖式实现）：
+
+1. **模板增强执行流**
+```mermaid
+graph TD
+    A[加载模板] --> B[沙箱验证]
+    B --> C[生成临时副本]
+    C --> D[隔离执行]
+    D --> E[结果分析]
+```
+
+2. **具体实现路径**：
+- 模板目录：`./templates/program_templates.py`
+- 执行引擎：`./core/local_engine.py` + `./core/sandbox.py`
+
+3. **安全执行流程**：
+```python
+# 在 LocalProgramEngine 类中添加新方法
+def execute_template(self, template_name, params):
+    # 1. 安全加载模板（只读模式）
+    template = PROGRAM_TEMPLATES.get(template_name)
+    if not template:
+        return {"error": "Template not found"}
+    
+    # 2. 生成临时执行文件（确保路径唯一）
+    temp_path = f"./temp/{template_name}_{uuid.uuid4()}.py"
+    with open(temp_path, "x") as f:  # 'x'模式防止覆盖
+        f.write(template["template"])
+    
+    # 3. 选择执行环境
+    if template.get("needs_sandbox"):
+        return ExecutionSandbox().safe_execute(temp_path)
+    else:
+        return self.execute_program(temp_path)
+```
+
+4. **模板改造建议**：
+```python
+PROGRAM_TEMPLATES = {
+    "data_processor": {
+        "description": "安全数据处理模板",
+        "needs_sandbox": True,  # 新增安全标记
+        "template": """# 自动添加安全头
+import pandas as pd
+from pathlib import Path
+
+def process_data(input_path):
+    output_path = Path(input_path).with_suffix('.processed.csv')
+    # 自动校验路径安全性
+    if not str(output_path).startswith('./output/'):
+        raise SecurityError("非法输出路径")
+    # ...原有逻辑...
+"""
+    }
+}
+```
+
+5. **新增安全措施**：
+- 自动添加临时文件清理任务
+- 模板中强制包含路径校验逻辑
+- 执行记录保存到 `./logs/template_executions/`
+
+需要我展示如何为特定模板（如web_scraper）添加安全限制吗？

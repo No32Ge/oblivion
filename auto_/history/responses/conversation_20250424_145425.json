@@ -1,0 +1,162 @@
+[
+  {
+    "timestamp": "2025-04-24T14:55:13.249539",
+    "role": "user",
+    "content": "放 音乐 的 同事 需要 同时 说话 说话 的 生 要 大方 音乐 的 音量 也 行 啊",
+    "content_hash": 8278786702007106302
+  },
+  {
+    "timestamp": "2025-04-24T14:55:16.255891",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764426055234323438",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\", \"volume\": 0.5}"
+        },
+        "type": "function",
+        "index": 0
+      },
+      {
+        "id": "call_-8764426055234323437",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"音乐已开始播放，请享受！\", \"voice_key\": \"cn_female\", \"volume\": 1.0}"
+        },
+        "type": "function",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:55:16.255891",
+    "role": "tool",
+    "tool_call_id": "call_-8764426055234323438",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T14:55:16.255891",
+    "role": "tool",
+    "tool_call_id": "call_-8764426055234323437",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T14:55:20.179744",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764426055234323438",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\", \"volume\": 0.5}"
+        },
+        "type": "function",
+        "index": 0
+      },
+      {
+        "id": "call_-8764426055234323437",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"音乐已开始播放，请享受！\", \"voice_key\": \"cn_female\", \"volume\": 1.0}"
+        },
+        "type": "function",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:55:20.179744",
+    "role": "tool",
+    "tool_call_id": "call_-8764426055234323438",
+    "content": "说话成功: 正在说话: 音乐已开始播放，请享..."
+  },
+  {
+    "timestamp": "2025-04-24T14:55:20.179744",
+    "role": "tool",
+    "tool_call_id": "call_-8764426055234323437",
+    "content": "说话成功: 正在说话: 音乐已开始播放，请享..."
+  },
+  {
+    "timestamp": "2025-04-24T14:55:27.621674",
+    "role": "assistant",
+    "content": "音乐已开始播放，请享受！同时，我也已经用大方的方式通知您了。音乐音量已设置为适中，希望您喜欢。",
+    "content_hash": -8961130337088477473
+  },
+  {
+    "timestamp": "2025-04-24T14:55:40.211696",
+    "role": "user",
+    "content": "重新 换 一首歌 然后 告诉我 你 这 首 歌 为啥 放 这首歌",
+    "content_hash": -649116147909213385
+  },
+  {
+    "timestamp": "2025-04-24T14:55:42.023060",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764430281482462131",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/Grimes - Oblivion.ogg\", \"volume\": 0.5}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:55:42.023060",
+    "role": "tool",
+    "tool_call_id": "call_-8764430281482462131",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T14:55:49.941170",
+    "role": "assistant",
+    "content": null,
+    "content_hash": -9223363242714654849
+  },
+  {
+    "timestamp": "2025-04-24T14:55:58.896604",
+    "role": "user",
+    "content": "为 告诉 为啥 放 这首歌",
+    "content_hash": 4710731582872303960
+  },
+  {
+    "timestamp": "2025-04-24T14:56:15.874683",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764432549225710592",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"我选择播放《Oblivion》这首歌，因为它具有独特的电子音乐风格和强烈的节奏感，能够带来振奋人心的听觉体验。希望您会喜欢！\", \"voice_key\": \"cn_female\", \"volume\": 1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:56:15.874683",
+    "role": "tool",
+    "tool_call_id": "call_-8764432549225710592",
+    "content": "说话成功: 正在说话: 我选择播放《Obli..."
+  },
+  {
+    "timestamp": "2025-04-24T14:56:22.943734",
+    "role": "assistant",
+    "content": "我选择播放《Oblivion》这首歌，因为它具有独特的电子音乐风格和强烈的节奏感，能够带来振奋人心的听觉体验。希望您会喜欢！",
+    "content_hash": 6684854614626327558
+  },
+  {
+    "timestamp": "2025-04-24T14:56:34.495898",
+    "role": "user",
+    "content": "把 这首歌 的 营养 给 一点",
+    "content_hash": -6777812958032887485
+  }
+]

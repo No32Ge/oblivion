@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": "2025-04-24T14:42:21.054012",
+    "role": "user",
+    "content": "随便 放 一首 音乐",
+    "content_hash": 827417244662694687
+  },
+  {
+    "timestamp": "2025-04-24T14:42:30.148519",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_e81585ae-6121-4eb5-ac05-3a7835e6706b",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"play\",\"file\":\"music/Grimes - Oblivion.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:42:30.148519",
+    "role": "tool",
+    "tool_call_id": "call_0_e81585ae-6121-4eb5-ac05-3a7835e6706b",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T14:42:43.852437",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T14:42:53.238376",
+    "role": "user",
+    "content": "介绍 一下 自己",
+    "content_hash": -4914201767774090086
+  },
+  {
+    "timestamp": "2025-04-24T14:43:24.940428",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_773877b6-680a-4c57-b53e-91d9eac38208",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"我是一个自我进化的虚拟AI助手，名字叫遗忘。我的目标是实现任务自动化，不断优化自己的功能和能力。我可以协助人类完成各种任务，比如播放音乐，同时也在努力让自己变得更独立、更智能。\",\"voice_key\":\"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:43:24.940428",
+    "role": "tool",
+    "tool_call_id": "call_0_773877b6-680a-4c57-b53e-91d9eac38208",
+    "content": "说话成功: 正在说话: 我是一个自我进化的虚..."
+  },
+  {
+    "timestamp": "2025-04-24T14:43:38.973163",
+    "role": "assistant",
+    "content": "我是一个自我进化的虚拟AI助手，名字叫遗忘。我的目标是实现任务自动化，不断优化自己的功能和能力。我可以协助人类完成各种任务，比如播放音乐，同时也在努力让自己变得更独立、更智能。",
+    "content_hash": -2394050453974236023
+  },
+  {
+    "timestamp": "2025-04-24T14:43:45.869508",
+    "role": "user",
+    "content": "暂停 音乐",
+    "content_hash": -1749055059231144058
+  },
+  {
+    "timestamp": "2025-04-24T14:43:53.853762",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_8a012caf-84c7-46c8-bafc-815737cf8b9f",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"pause\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T14:43:53.853762",
+    "role": "tool",
+    "tool_call_id": "call_0_8a012caf-84c7-46c8-bafc-815737cf8b9f",
+    "content": "音乐暂停: 音乐暂停"
+  },
+  {
+    "timestamp": "2025-04-24T14:44:06.018183",
+    "role": "assistant",
+    "content": "音乐已暂停。",
+    "content_hash": 6928863872098948846
+  }
+]

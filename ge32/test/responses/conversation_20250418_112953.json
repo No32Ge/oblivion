@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2025-04-18T11:30:01.973139",
+    "role": "user",
+    "content": "放歌",
+    "content_hash": -7861764643641792867
+  },
+  {
+    "timestamp": "2025-04-18T11:30:11.893871",
+    "role": "assistant",
+    "content": "为了播放音乐，我需要知道音乐文件的路径和音量设置。请提供以下信息：\n\n1. **音乐文件路径**：例如 `Grimes - Oblivion.ogg`。\n2. **音量**（可选，默认为0.5）：范围从0.0（静音）到1.0（最大音量）。\n\n如果你没有指定文件路径，我可以尝试播放默认的音乐文件（如果有）。请告诉我你的选择！",
+    "content_hash": 4335642111786917731
+  },
+  {
+    "timestamp": "2025-04-18T11:30:30.613457",
+    "role": "user",
+    "content": "随便",
+    "content_hash": 2681077619221279057
+  },
+  {
+    "timestamp": "2025-04-18T11:30:36.498451",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_854d0695-7c6e-4839-a29c-3f20dbd645d3",
+        "function": {
+          "name": "play_music",
+          "arguments": "{\"file\":\"Grimes - Oblivion.ogg\",\"volume\":0.5}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-18T11:30:36.498451",
+    "role": "tool",
+    "tool_call_id": "call_0_854d0695-7c6e-4839-a29c-3f20dbd645d3",
+    "content": "音乐播放成功: 播放中"
+  }
+]

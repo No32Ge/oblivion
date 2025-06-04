@@ -1,0 +1,160 @@
+在 `main_ai.py` 中，我们需要对 `ChatManager` 的功能进行扩展，以支持更强大的记忆管理和工具调用记录。以下是具体的修改步骤和代码实现：
+
+---
+
+### **修改目标**
+1. **增强 `ChatManager`**：支持长期记忆、工具调用链路记录和动态记忆管理。
+2. **优化 `run_conversation` 函数**：确保工具调用的完整性和记忆的持久化。
+3. **新增工具调用分析功能**：记录工具调用的输入、输出和执行状态。
+
+---
+
+### **具体修改内容**
+
+#### **1. 修改 `ChatManager` 类**
+在 `main_ai.py` 中，将原有的 `ChatManager` 替换为以下增强版代码：
+
+```python
+class EnhancedChatManager:
+    def __init__(self, storage_dir="test/responses"):
+        self.storage_dir = storage_dir
+        self.conversation_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.history = []  # 短期对话历史
+        self.long_term_memory = []  # 长期记忆存储
+        self.tool_call_registry = {}  # 工具调用注册表
+        self.memory_cache = set()  # 防止重复记忆
+
+    def add_message(self, role, content):
+        """添加对话记录到短期历史"""
+        content_hash = hash(content)
+        if content_hash not in self.memory_cache:
+            self.history.append({
+                "timestamp": datetime.now().isoformat(),
+                "role": role,
+                "content": content,
+                "content_hash": content_hash
+            })
+            self.memory_cache.add(content_hash)
+
+    def add_tool_call(self, tool_name, arguments, result):
+        """记录工具调用到注册表和长期记忆"""
+        tool_call_id = f"tool_{len(self.tool_call_registry) + 1}"
+        self.tool_call_registry[tool_call_id] = {
+            "tool_name": tool_name,
+            "arguments": arguments,
+            "result": result,
+            "timestamp": datetime.now().isoformat(),
+            "status": "success" if result else "failed",
+        }
+        # 如果工具调用重要，添加到长期记忆
+        if self._is_important_tool_call(tool_name, result):
+            self.long_term_memory.append({
+                "id": tool_call_id,
+                "summary": self._summarize_tool_call(tool_name, arguments, result),
+            })
+
+    def _is_important_tool_call(self, tool_name, result):
+        """判断工具调用是否重要（可自定义逻辑）"""
+        return tool_name in ["play_music", "create_file"]
+
+    def _summarize_tool_call(self, tool_name, arguments, result):
+        """生成工具调用摘要"""
+        return f"{tool_name}({arguments}) -> {str(result)[:100]}..."
+
+    def save_conversation(self):
+        """保存完整对话历史和工具调用记录"""
+        filename = f"conversation_{self.conversation_id}.json"
+        data = {
+            "history": self.history,
+            "tool_calls": self.tool_call_registry,
+            "long_term_memory": self.long_term_memory,
+        }
+        return save_file(
+            json.dumps(data, indent=2, ensure_ascii=False),
+            self.storage_dir,
+            filename
+        )
+```
+
+---
+
+#### **2. 修改 `run_conversation` 函数**
+在 `run_conversation` 函数中，更新工具调用的处理逻辑，确保调用结果被完整记录：
+
+```python
+def run_conversation(user_input):
+    # 初始化增强版 ChatManager
+    chat_manager = EnhancedChatManager()
+    chat_manager.add_message("user", user_input)
+
+    # 构建系统提示词（保持不变）
+    system_prompt = f"""
+    ...（原有内容不变）
+    """
+
+    # 调用 AI 接口（保持不变）
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            *[{"role": msg["role"], "content": msg["content"]} for msg in chat_manager.history]
+        ],
+        tools=[...],  # 原有工具定义
+        tool_choice="auto"
+    )
+
+    # 处理工具调用
+    tool_calls = response.choices[0].message.tool_calls
+    if tool_calls:
+        for call in tool_calls:
+            tool_name = call.function.name
+            arguments = json.loads(call.function.arguments)
+            result = local_engine.execute_tool(tool_name, arguments)
+            chat_manager.add_tool_call(tool_name, arguments, result)  # 使用增强版记录
+
+    # 处理 AI 响应（保持不变）
+    result = response.choices[0].message.content
+    chat_manager.add_message("assistant", result)
+
+    # 保存对话和工具调用记录
+    chat_manager.save_conversation()
+    return result
+```
+
+---
+
+#### **3. 新增工具调用分析功能**
+在 `main_ai.py` 中新增以下函数，用于分析工具调用历史：
+
+```python
+def analyze_tool_calls(chat_manager, tool_name=None):
+    """分析工具调用历史"""
+    if tool_name:
+        return {k: v for k, v in chat_manager.tool_call_registry.items() if v["tool_name"] == tool_name}
+    return chat_manager.tool_call_registry
+
+def get_tool_call_summary(chat_manager, tool_call_id):
+    """获取工具调用摘要"""
+    return chat_manager.tool_call_registry.get(tool_call_id, {}).get("summary", "未找到记录")
+```
+
+---
+
+### **测试与验证**
+1. **测试工具调用记录**：
+   - 调用 `play_music` 或 `create_file`，检查 `tool_call_registry` 是否被正确填充。
+   - 验证长期记忆 (`long_term_memory`) 是否仅包含重要工具调用。
+
+2. **测试记忆持久化**：
+   - 运行多次对话后，检查生成的 `conversation_*.json` 文件是否包含完整的对话历史和工具调用记录。
+
+3. **测试分析功能**：
+   - 调用 `analyze_tool_calls`，确保能按工具名称筛选记录。
+
+---
+
+### **下一步**
+1. **生成文件**：如果需要，我可以为你生成修改后的 `main_ai.py` 文件。
+2. **进一步优化**：例如添加工具调用性能监控或错误重试机制。
+
+请告诉我是否需要进一步细化某个部分！

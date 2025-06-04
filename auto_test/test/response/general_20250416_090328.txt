@@ -1,0 +1,135 @@
+我理解你的需求了！我们需要建立一个**对话管理系统**，能够自动跟踪每次对话的上下文和代码变更。以下是分步实现方案：
+
+---
+
+### 第一步：创建对话管理类（`DialogueManager`）
+在项目中新建 `dialogue_manager.py` 文件：
+
+```python
+import os
+import json
+from datetime import datetime
+from typing import List, Dict
+
+class DialogueManager:
+    def __init__(self, storage_dir: str = "dialogue_history"):
+        self.storage_dir = storage_dir
+        os.makedirs(storage_dir, exist_ok=True)
+        self.current_dialogue = {
+            "start_time": datetime.now().isoformat(),
+            "messages": [],
+            "code_changes": []
+        }
+
+    def add_message(self, role: str, content: str):
+        """记录对话消息"""
+        self.current_dialogue["messages"].append({
+            "role": role,
+            "content": content,
+            "timestamp": datetime.now().isoformat()
+        })
+
+    def log_code_change(self, change_description: str, file_path: str):
+        """记录代码变更"""
+        self.current_dialogue["code_changes"].append({
+            "description": change_description,
+            "file": file_path,
+            "timestamp": datetime.now().isoformat()
+        })
+
+    def save_dialogue(self):
+        """保存当前对话到JSON文件"""
+        filename = f"dialogue_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        filepath = os.path.join(self.storage_dir, filename)
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(self.current_dialogue, f, indent=2)
+        
+        print(f"✅ 对话已保存到: {filepath}")
+        return filepath
+
+    def get_recent_messages(self, n: int = 5) -> List[Dict]:
+        """获取最近的n条消息"""
+        return self.current_dialogue["messages"][-n:]
+```
+
+---
+
+### 第二步：集成到主程序（修改 `main.py`）
+```python
+from dialogue_manager import DialogueManager
+
+# 初始化对话管理器
+dialogue_manager = DialogueManager()
+
+def main():
+    # 在每次API调用前后记录对话
+    dialogue_manager.add_message("user", user_input)  # 记录用户输入
+    
+    response = client.chat.completions.create(...)
+    result = response.choices[0].message.content
+    
+    dialogue_manager.add_message("assistant", result)  # 记录AI回复
+    dialogue_manager.log_code_change("Added save_response function", "util.py")
+    dialogue_manager.save_dialogue()
+```
+
+---
+
+### 第三步：自动代码变更跟踪（扩展功能）
+在 `DialogueManager` 类中添加：
+
+```python
+def auto_detect_code_changes(self):
+    """自动检测代码变更（需配合git或文件哈希）"""
+    # 实现思路：
+    # 1. 对关键文件计算哈希值
+    # 2. 比较前后差异
+    # 3. 自动生成变更描述
+    pass
+```
+
+---
+
+### 系统架构说明
+```
+项目结构：
+.
+├── dialogue_history/       # 对话记录存储
+│   └── dialogue_20240605_154302.json
+├── dialogue_manager.py     # 对话管理核心
+├── main.py                 # 集成主程序
+└── util.py                 # 工具函数
+```
+
+---
+
+### 功能特点
+1. **完整对话历史**：记录所有交互消息和元数据
+2. **变更追踪**：显式记录每次代码修改
+3. **时间戳管理**：所有操作都有精确时间记录
+4. **可扩展性**：支持未来添加自动差异检测
+
+---
+
+### 下一步改进方向
+1. **自动化集成**：
+   ```python
+   def apply_code_changes(self, code_str: str):
+       """让AI能够直接修改代码文件"""
+       # 需要安全验证机制
+   ```
+
+2. **上下文感知**：
+   ```python
+   def get_context_summary(self) -> str:
+       """生成当前对话的上下文摘要"""
+   ```
+
+3. **版本控制集成**：
+   ```python
+   def commit_to_git(self, message: str):
+       """自动提交代码变更到git"""
+   ```
+
+需要我先实现哪个高级功能？或者我们可以先测试基础对话管理系统是否满足需求？ 🛠️

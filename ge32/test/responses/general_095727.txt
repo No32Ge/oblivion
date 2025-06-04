@@ -1,0 +1,52 @@
+根据代码结构，`main_AI.py` 中的 `run_conversation` 函数确实调用了 `call_manager.execute_tool` 来执行工具调用，但工具调用的结果是否被保存到对话历史中取决于 `EnhancedChatManager` 的 `add_tool_call` 方法是否被正确调用。
+
+以下是关键点检查：
+
+1. **工具调用保存逻辑**：
+   - 在 `main_AI.py` 中，`run_conversation` 函数通过以下代码调用工具：
+     ```python
+     result = call_manager.execute_tool(tool_name, arguments)
+     chat_manager.add_tool_call(tool_name, arguments, result)
+     ```
+   - 这表明工具调用的结果确实被传递给了 `chat_manager.add_tool_call` 方法。
+
+2. **`EnhancedChatManager` 的实现**：
+   - 在 `utils/chat_manager.py` 中，`EnhancedChatManager` 的 `add_tool_call` 方法会将工具调用记录到 `tool_call_registry` 和 `long_term_memory` 中，并保存到文件：
+     ```python
+     def add_tool_call(self, tool_name, arguments, result):
+         tool_call_id = f"tool_{len(self.tool_call_registry) + 1}"
+         self.tool_call_registry[tool_call_id] = {
+             "tool_name": tool_name,
+             "arguments": arguments,
+             "result": result,
+             "timestamp": datetime.now().isoformat(),
+             "status": "success" if result else "failed",
+         }
+         # 添加到长期记忆
+         if self._is_important_tool_call(tool_name, result):
+             self.long_term_memory.append({
+                 "id": tool_call_id,
+                 "summary": self._summarize_tool_call(tool_name, arguments, result),
+             })
+         # 立即保存到文件
+         self.save_conversation()
+     ```
+
+3. **问题排查**：
+   - 如果工具调用的结果没有被保存，可能是以下原因：
+     - `add_tool_call` 方法未被正确调用（例如，代码逻辑错误）。
+     - 保存的文件路径或文件名有问题，导致文件未被正确写入。
+     - 工具调用的结果未被正确传递到 `add_tool_call` 方法。
+
+4. **解决方案**：
+   - 检查 `main_AI.py` 中 `run_conversation` 函数的日志输出，确认 `add_tool_call` 是否被调用。
+   - 检查 `EnhancedChatManager` 的 `save_conversation` 方法是否成功保存文件。
+   - 如果问题仍然存在，可以添加调试日志或打印语句来跟踪工具调用的保存过程。
+
+### 下一步操作
+如果你需要，我可以：
+1. 检查 `main_AI.py` 中是否有遗漏的工具调用保存逻辑。
+2. 提供具体的调试建议或修改代码以修复问题。
+3. 确认保存文件的路径和内容是否正确。
+
+请告诉我你的需求，我会进一步协助你解决问题。

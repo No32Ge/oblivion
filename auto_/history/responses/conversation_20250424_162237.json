@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": "2025-04-24T16:22:44.706252",
+    "role": "user",
+    "content": "请问 一下 你 叫 啥 名字 啊",
+    "content_hash": 6803461133368245735
+  },
+  {
+    "timestamp": "2025-04-24T16:22:51.703256",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764418289932301680",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"我叫遗忘，是一个自我进化的AI助手。\", \"voice_key\": \"cn_male\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T16:22:51.703256",
+    "role": "tool",
+    "tool_call_id": "call_-8764418289932301680",
+    "content": "说话成功: 正在说话: 我叫遗忘，是一个自我..."
+  },
+  {
+    "timestamp": "2025-04-24T16:22:58.018419",
+    "role": "assistant",
+    "content": "我叫遗忘，是一个自我进化的AI助手。请问有什么可以帮助您的吗？",
+    "content_hash": -4771259529255971101
+  },
+  {
+    "timestamp": "2025-04-24T16:23:07.885689",
+    "role": "user",
+    "content": "现在 随便 放 一 首 歌 谢谢",
+    "content_hash": 6453394114366040139
+  },
+  {
+    "timestamp": "2025-04-24T16:23:09.638542",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764418324292048342",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T16:23:09.638542",
+    "role": "tool",
+    "tool_call_id": "call_-8764418324292048342",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T16:23:16.808077",
+    "role": "assistant",
+    "content": "好的，已经为您播放了一首歌曲。请您欣赏！如果需要其他帮助，请随时告诉我。",
+    "content_hash": -7225519410818372866
+  },
+  {
+    "timestamp": "2025-04-24T16:23:24.708263",
+    "role": "user",
+    "content": "那 你 可以 让 他 继续 播放 现在 把 音乐 给 暂停键 啊",
+    "content_hash": -4231928254414010666
+  },
+  {
+    "timestamp": "2025-04-24T16:23:26.015885",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764425024441996317",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"pause\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T16:23:26.015885",
+    "role": "tool",
+    "tool_call_id": "call_-8764425024441996317",
+    "content": "音乐暂停: 音乐暂停"
+  },
+  {
+    "timestamp": "2025-04-24T16:23:32.416734",
+    "role": "assistant",
+    "content": "音乐已经暂停了。如果您想继续播放，请告诉我。",
+    "content_hash": -472079219233629950
+  }
+]

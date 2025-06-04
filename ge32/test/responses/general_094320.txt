@@ -1,0 +1,58 @@
+根据你的反馈，我检查了代码逻辑，发现工具调用的结果确实会被记录到对话历史中，但可能没有及时保存到文件或长期记忆中。以下是具体问题和解决方案：
+
+### 问题分析
+1. **工具调用结果的保存**：
+   - 在 `run_conversation` 函数中，工具调用的结果通过 `chat_manager.add_tool_call` 方法保存到历史记录中。
+   - 但 `add_tool_call` 方法仅将结果添加到内存中的 `history` 列表和 `tool_call_registry` 中，并未立即保存到文件。
+
+2. **文件保存的触发**：
+   - 在 `run_conversation` 函数的末尾，`chat_manager.save_conversation` 会被调用，保存完整的对话历史。
+   - 但工具调用的结果是否包含在保存的内容中，取决于 `save_conversation` 的实现。
+
+### 解决方案
+1. **立即保存工具调用结果**：
+   - 在 `add_tool_call` 方法中，添加逻辑以立即保存工具调用的结果到文件。
+   - 示例修改：
+     ```python
+     def add_tool_call(self, tool_name, arguments, result):
+         tool_call_id = f"tool_{len(self.tool_call_registry) + 1}"
+         self.tool_call_registry[tool_call_id] = {
+             "tool_name": tool_name,
+             "arguments": arguments,
+             "result": result,
+             "timestamp": datetime.now().isoformat(),
+             "status": "success" if result else "failed",
+         }
+         # 添加到长期记忆
+         if self._is_important_tool_call(tool_name, result):
+             self.long_term_memory.append({
+                 "id": tool_call_id,
+                 "summary": self._summarize_tool_call(tool_name, arguments, result),
+             })
+         # 立即保存到文件
+         self.save_conversation()
+     ```
+
+2. **检查 `save_conversation` 方法**：
+   - 确保 `save_conversation` 方法包含工具调用的记录。
+   - 示例实现：
+     ```python
+     def save_conversation(self):
+         """保存完整对话历史（包括工具调用）"""
+         filename = f"conversation_{self.conversation_id}.json"
+         data = {
+             "history": self.history,
+             "tool_calls": list(self.tool_call_registry.values()),
+         }
+         return save_file(
+             json.dumps(data, indent=2, ensure_ascii=False),
+             self.storage_dir,
+             filename
+         )
+     ```
+
+### 具体路径
+- 工具调用结果的保存逻辑位于 `main_AI.py` 中的 `run_conversation` 函数。
+- 长期记忆和工具调用的管理位于 `utils/chat_manager.py` 中的 `EnhancedChatManager` 类。
+
+如果需要进一步帮助，可以提供具体的代码片段或需求，我可以协助优化逻辑。

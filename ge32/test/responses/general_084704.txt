@@ -1,0 +1,82 @@
+优化记忆管理系统可以从以下几个方面入手：
+
+### 1. **增强记忆存储结构**
+   - **当前问题**：记忆存储仅包含简单的对话历史和工具调用记录，缺乏对工具调用结果的深度分析和长期记忆。
+   - **优化方案**：
+     - 为工具调用添加更详细的元数据（如调用时间、执行状态、结果摘要）。
+     - 引入长期记忆存储，将重要的工具调用结果和上下文关联起来。
+
+### 2. **改进记忆检索机制**
+   - **当前问题**：记忆检索仅基于简单的哈希值，无法支持复杂的上下文关联查询。
+   - **优化方案**：
+     - 使用向量数据库或语义搜索技术，支持基于内容的记忆检索。
+     - 为工具调用添加标签或分类，方便快速定位。
+
+### 3. **工具调用链路的完整性**
+   - **当前问题**：工具调用的结果未被充分记录或分析，导致无法复用或优化。
+   - **优化方案**：
+     - 记录工具调用的完整链路（输入、输出、执行时间、错误信息）。
+     - 为工具调用结果生成摘要，便于后续分析和复用。
+
+### 4. **动态记忆管理**
+   - **当前问题**：记忆容量固定，无法动态调整。
+   - **优化方案**：
+     - 实现动态记忆管理，根据重要性自动调整记忆存储时长。
+     - 引入遗忘机制，定期清理低优先级的记忆。
+
+### 5. **代码实现优化**
+   - **当前问题**：`ChatManager`类的功能较为单一，无法满足复杂需求。
+   - **优化方案**：
+     - 扩展`ChatManager`类，支持上述功能。
+     - 为工具调用添加专门的记忆管理模块。
+
+### 具体优化代码示例
+以下是一个优化后的`EnhancedChatManager`类的实现框架：
+
+```python
+class EnhancedChatManager(ChatManager):
+    def __init__(self, max_history=50, long_term_capacity=1000):
+        super().__init__()
+        self.long_term_memory = []  # 长期记忆存储
+        self.tool_call_registry = {}  # 工具调用注册表
+        self.max_history = max_history
+        self.long_term_capacity = long_term_capacity
+
+    def add_tool_call(self, tool_name, arguments, result):
+        """增强版工具调用记录"""
+        tool_call_id = f"tool_{len(self.tool_call_registry) + 1}"
+        self.tool_call_registry[tool_call_id] = {
+            "tool_name": tool_name,
+            "arguments": arguments,
+            "result": result,
+            "timestamp": datetime.now().isoformat(),
+            "status": "success" if result else "failed",
+        }
+        # 添加到长期记忆
+        if self._is_important_tool_call(tool_name, result):
+            self.long_term_memory.append({
+                "id": tool_call_id,
+                "summary": self._summarize_tool_call(tool_name, arguments, result),
+            })
+
+    def _is_important_tool_call(self, tool_name, result):
+        """判断工具调用是否重要"""
+        return tool_name in ["play_music", "create_file"]  # 示例：仅记录特定工具调用
+
+    def _summarize_tool_call(self, tool_name, arguments, result):
+        """生成工具调用摘要"""
+        return f"{tool_name}({arguments}) -> {result[:100]}..."  # 截取结果前100字符
+
+    def get_tool_call_history(self, tool_name=None):
+        """获取工具调用历史"""
+        if tool_name:
+            return {k: v for k, v in self.tool_call_registry.items() if v["tool_name"] == tool_name}
+        return self.tool_call_registry
+```
+
+### 下一步行动
+1. **实现优化代码**：将上述优化方案集成到现有系统中。
+2. **测试与验证**：确保新记忆管理系统的稳定性和性能。
+3. **持续迭代**：根据实际使用情况进一步优化。
+
+是否需要我为你生成具体的代码文件或进一步细化某个优化点？

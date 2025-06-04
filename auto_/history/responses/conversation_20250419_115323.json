@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2025-04-19T11:53:59.250746",
+    "role": "user",
+    "content": "放首歌",
+    "content_hash": 7526096279787850205
+  },
+  {
+    "timestamp": "2025-04-19T11:54:01.524859",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781444880346854877",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:54:01.524859",
+    "role": "tool",
+    "tool_call_id": "call_-8781444880346854877",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-19T11:54:07.959556",
+    "role": "assistant",
+    "content": null,
+    "content_hash": -9223363242610997377
+  },
+  {
+    "timestamp": "2025-04-19T11:54:12.363593",
+    "role": "user",
+    "content": "讲个故事，大声一点",
+    "content_hash": 7290782137085332713
+  }
+]

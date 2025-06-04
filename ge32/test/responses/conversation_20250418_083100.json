@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-04-18T08:31:12.528735",
+    "role": "user",
+    "content": "播放音乐",
+    "content_hash": 5984403083880922157
+  },
+  {
+    "timestamp": "2025-04-18T08:31:20.584985",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  }
+]

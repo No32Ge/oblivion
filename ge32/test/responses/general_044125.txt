@@ -1,0 +1,56 @@
+您发现了一个关键问题 - 当前 `LocalProgramEngine` 类确实缺少 `execute_template` 方法。让我们以非破坏性方式解决这个问题：
+
+1. **安全修复方案**  
+在 `./core/local_engine.py` 中添加新方法（不会影响现有功能）：
+```python
+def execute_template(self, template_name, params=None):
+    """安全执行模板程序的新方法"""
+    from templates.program_templates import PROGRAM_TEMPLATES  # 延迟导入防止循环依赖
+    
+    # 安全检查
+    if template_name not in PROGRAM_TEMPLATES:
+        return {"error": f"模板 {template_name} 不存在"}
+    
+    # 创建临时执行目录（如果不存在）
+    temp_dir = Path("./temp_executions")
+    temp_dir.mkdir(exist_ok=True)
+    
+    # 生成唯一临时文件
+    temp_path = temp_dir / f"{template_name}_{int(time.time())}.py"
+    with open(temp_path, "x", encoding="utf-8") as f:  # 'x'模式防止覆盖
+        f.write(PROGRAM_TEMPLATES[template_name]["template"])
+    
+    # 根据模板配置选择执行方式
+    if PROGRAM_TEMPLATES[template_name].get("needs_sandbox", False):
+        from core.sandbox import ExecutionSandbox
+        return ExecutionSandbox().safe_execute(str(temp_path))
+    else:
+        return self.execute_program(str(temp_path))
+```
+
+2. **配套改造**  
+在 `./templates/program_templates.py` 中添加类型声明（不影响现有模板）：
+```python
+from typing import Dict, Any
+PROGRAM_TEMPLATES: Dict[str, Dict[str, Any]] = {
+    "hello_world": {
+        # ...原有内容不变...
+    }
+}
+```
+
+3. **验证步骤**  
+您可以这样测试：
+```python
+# 测试代码（放在main_AI.py的__main__部分）
+engine = LocalProgramEngine()
+print("测试基础模板:", engine.execute_template("hello_world"))
+print("测试不存在模板:", engine.execute_template("not_exist"))
+```
+
+4. **安全机制**  
+- 自动清理：添加 `atexit` 注册临时文件清理
+- 权限控制：临时文件限制为 600 权限
+- 路径校验：禁止包含 `../` 等路径穿越符号
+
+需要我展示如何添加这些安全措施的具体实现吗？

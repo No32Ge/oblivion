@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-04-18T10:11:33.825696",
+    "role": "user",
+    "content": "播放音乐",
+    "content_hash": 7336478002787110154
+  },
+  {
+    "timestamp": "2025-04-18T10:11:42.316842",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_db307e66-767f-46a7-bc6c-8d8fcd4df74e",
+        "function": {
+          "name": "play_music",
+          "arguments": "{\"file\":\"Grimes - Oblivion.ogg\",\"volume\":0.5}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-18T10:11:42.316842",
+    "role": "tool",
+    "tool_call_id": "call_0_db307e66-767f-46a7-bc6c-8d8fcd4df74e",
+    "content": null
+  },
+  {
+    "timestamp": "2025-04-18T10:11:43.006544",
+    "role": "tool",
+    "tool_call_id": "call_0_db307e66-767f-46a7-bc6c-8d8fcd4df74e",
+    "content": "音乐播放成功: 播放中"
+  }
+]

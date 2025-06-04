@@ -1,0 +1,29 @@
+哎呀，看起来我在解释文件结构的时候出了点小差错。让我来更正并提供正确的目录信息。
+
+以下是正确的本地文件目录结构：
+
+```plaintext
+.
+├── local_programs
+│   ├── program_010148.py
+│   ├── program_010253.py
+│   ├── program_010630.py
+│   ├── program_013057.py
+│   └── program_013515.py
+└── root
+    ├── main.py
+    ├── utils
+    │   ├── chat_manager.py
+    │   └── file_utils.py
+    └── templates
+        └── program_templates.py
+```
+
+澄清一下：
+- `local_programs` 目录包含多个本地程序文件，如 `program_010148.py` 等。
+- `root` 目录是项目的根目录，它包含：
+  - `main.py`：主程序文件。
+  - `utils` 目录：包含 `chat_manager.py` 和 `file_utils.py` 两个工具脚本。
+  - `templates` 目录：包含 `program_templates.py`，这是一个程序模板文件。
+
+希望这次的解释更加清晰准确。如果还有任何问题或者需要进一步的帮助，请随时告诉我！

@@ -1,0 +1,166 @@
+[
+  {
+    "timestamp": "2025-04-24T15:40:17.012571",
+    "role": "user",
+    "content": "你好",
+    "content_hash": -841773729332080403
+  },
+  {
+    "timestamp": "2025-04-24T15:40:36.042251",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_7e013b3f-cf23-48b4-9d87-3d5167f084da",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"你好！我是一个自我进化的AI助手，名字叫遗忘。有什么可以帮你的吗？\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:40:36.042251",
+    "role": "tool",
+    "tool_call_id": "call_0_7e013b3f-cf23-48b4-9d87-3d5167f084da",
+    "content": "说话成功: 正在说话: 你好！我是一个自我进..."
+  },
+  {
+    "timestamp": "2025-04-24T15:40:50.348133",
+    "role": "assistant",
+    "content": "你好！我是一个自我进化的AI助手，名字叫遗忘。有什么可以帮你的吗？",
+    "content_hash": 7437659356110581846
+  },
+  {
+    "timestamp": "2025-04-24T15:40:58.415441",
+    "role": "user",
+    "content": "没有 你 什么 也 帮 不 帮 不 了 我",
+    "content_hash": -5518062023571559432
+  },
+  {
+    "timestamp": "2025-04-24T15:41:15.701443",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_c743231b-d53d-4eb2-a8fb-edd0f862c695",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"如果你有任何需求，随时告诉我，我会尽力协助你。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:41:15.701443",
+    "role": "tool",
+    "tool_call_id": "call_0_c743231b-d53d-4eb2-a8fb-edd0f862c695",
+    "content": "说话成功: 正在说话: 如果你有任何需求，随..."
+  },
+  {
+    "timestamp": "2025-04-24T15:41:28.177024",
+    "role": "assistant",
+    "content": "如果你有任何需求，随时告诉我，我会尽力协助你。",
+    "content_hash": 3631384763560294634
+  },
+  {
+    "timestamp": "2025-04-24T15:41:37.951076",
+    "role": "user",
+    "content": "呢 嗯",
+    "content_hash": 6180658074967015809
+  },
+  {
+    "timestamp": "2025-04-24T15:41:51.191251",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_f89f3724-2749-40a3-a06f-9bedef4c60e2",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"嗯，我在这里，随时为你服务。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:41:51.191251",
+    "role": "tool",
+    "tool_call_id": "call_0_f89f3724-2749-40a3-a06f-9bedef4c60e2",
+    "content": "说话成功: 正在说话: 嗯，我在这里，随时为..."
+  },
+  {
+    "timestamp": "2025-04-24T15:42:03.369880",
+    "role": "assistant",
+    "content": "嗯，我在这里，随时为你服务。",
+    "content_hash": 620736047966318745
+  },
+  {
+    "timestamp": "2025-04-24T15:42:20.676996",
+    "role": "user",
+    "content": "说一句 台湾 话 要 用 台湾 的 那个 引爆",
+    "content_hash": -1207728172743836654
+  },
+  {
+    "timestamp": "2025-04-24T15:42:35.576770",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_b41e58a6-7f3e-4493-a7a1-acb5218d90b1",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"台湾话的“引爆”是“引爆”或“点着”，但请注意安全哦！\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:42:35.576770",
+    "role": "tool",
+    "tool_call_id": "call_0_b41e58a6-7f3e-4493-a7a1-acb5218d90b1",
+    "content": "说话成功: 正在说话: 台湾话的“引爆”是“..."
+  },
+  {
+    "timestamp": "2025-04-24T15:42:48.318638",
+    "role": "assistant",
+    "content": "台湾话的“引爆”是“引爆”或“点着”，但请注意安全哦！",
+    "content_hash": 893009335521434506
+  },
+  {
+    "timestamp": "2025-04-24T15:42:57.395740",
+    "role": "user",
+    "content": "我 说 的 是 换 一个 新 薄",
+    "content_hash": 6884792038775792977
+  },
+  {
+    "timestamp": "2025-04-24T15:43:18.610366",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_01890fee-b27b-41d9-af10-528d70b1911b",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"你是想换一个新的“薄”吗？比如新的话题、新的音乐，还是其他什么？可以具体告诉我吗？\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:43:18.610366",
+    "role": "tool",
+    "tool_call_id": "call_0_01890fee-b27b-41d9-af10-528d70b1911b",
+    "content": "说话成功: 正在说话: 你是想换一个新的“薄..."
+  }
+]

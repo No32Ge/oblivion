@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2025-04-18T11:11:07.518473",
+    "role": "user",
+    "content": "你好",
+    "content_hash": -309889349970791610
+  },
+  {
+    "timestamp": "2025-04-18T11:11:14.459305",
+    "role": "assistant",
+    "content": "你好！我是遗忘，一个致力于自我进化和任务自动化的AI助手。有什么可以帮你的吗？",
+    "content_hash": 3607682978751466858
+  },
+  {
+    "timestamp": "2025-04-18T11:11:23.790798",
+    "role": "user",
+    "content": "随便放一首歌",
+    "content_hash": 7822299132786278376
+  },
+  {
+    "timestamp": "2025-04-18T11:11:29.501507",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_50222fdf-374b-4ef1-85c5-2f5d4c6e987b",
+        "function": {
+          "name": "play_music",
+          "arguments": {
+            "file": "Grimes - Oblivion.ogg",
+            "volume": 0.5
+          }
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-18T11:11:29.502509",
+    "role": "tool",
+    "tool_call_id": "call_0_50222fdf-374b-4ef1-85c5-2f5d4c6e987b",
+    "content": "音乐播放成功: 播放中"
+  }
+]

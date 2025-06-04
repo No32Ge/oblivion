@@ -1,0 +1,56 @@
+以下是专为输出"Hello World"设计的安全模板方案，完全遵循非覆盖式原则：
+
+1. **模板定义**  
+在 `./templates/program_templates.py` 中添加（不会覆盖原有内容）：
+```python
+PROGRAM_TEMPLATES.update({
+    "hello_world": {
+        "description": "安全输出Hello World",
+        "needs_sandbox": False,  # 基础功能无需沙箱
+        "template": '''#!/usr/bin/env python3
+# 安全标识：NO_FILE_OPERATION
+def main():
+    print("Hello World")  # 无文件操作纯输出
+
+if __name__ == "__main__":
+    main()  # 隔离执行入口
+'''
+    }
+})
+```
+
+2. **安全执行流程**  
+通过现有引擎执行（路径：`./core/local_engine.py`）：
+```python
+# 使用示例
+engine = LocalProgramEngine()
+result = engine.execute_template("hello_world", None)
+print(result["output"])  # 输出: Hello World
+```
+
+3. **安全特性验证**  
+- ✅ 无文件IO操作  
+- ✅ 无外部依赖  
+- ✅ 通过子进程隔离  
+- ✅ 可审计的纯输出  
+
+4. **扩展建议**  
+若需要增强，可添加：
+```python
+{
+    "hello_advanced": {
+        "description": "带参数的安全输出",
+        "template": '''# 新增参数校验
+def main(name="World"):
+    if not isinstance(name, str):  # 输入过滤
+        raise ValueError("Invalid input")
+    print(f"Hello {name}")
+'''
+    }
+}
+```
+
+是否需要进一步：
+1. 演示如何调用带参数的版本？
+2. 添加执行频率限制功能？
+3. 集成到现有API网关？

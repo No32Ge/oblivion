@@ -1,0 +1,70 @@
+为了实现 `call_manager.py` 的具体功能，使其能够调用 `MusicPlayer.py` 中的 `play` 方法并返回结果，可以按照以下步骤修改 `call_manager.py`：
+
+### 修改后的 `call_manager.py` 代码
+```python
+import os
+import sys
+from call.function.MusicPlayer import MusicPlayer
+
+class CallManager:
+    def __init__(self):
+        # 初始化音乐播放器（可选）
+        self.music_player = None
+
+    def execute_tool(self, tool_name, arguments):
+        """执行工具调用"""
+        if tool_name == "play_music":
+            # 调用音乐播放功能
+            return self._play_music(arguments)
+        else:
+            return f"未知工具调用: {tool_name}"
+
+    def _play_music(self, arguments):
+        """播放音乐的具体实现"""
+        try:
+            file_path = arguments.get("file")
+            volume = arguments.get("volume", 1.0)  # 默认音量为1.0
+
+            # 初始化音乐播放器
+            self.music_player = MusicPlayer(file_path, volume=volume)
+            result = self.music_player.play()
+            return f"音乐播放成功: {result}"
+        except Exception as e:
+            return f"音乐播放失败: {str(e)}"
+```
+
+### 关键点说明
+1. **导入依赖**：
+   - 从 `call.function.MusicPlayer` 导入 `MusicPlayer` 类。
+   - 确保 `MusicPlayer.py` 文件路径正确。
+
+2. **`execute_tool` 方法**：
+   - 根据 `tool_name` 分发调用具体的工具方法。
+   - 如果是 `play_music`，则调用 `_play_music` 方法。
+
+3. **`_play_music` 方法**：
+   - 解析参数（`file` 和 `volume`）。
+   - 初始化 `MusicPlayer` 实例并调用 `play` 方法。
+   - 返回播放结果或错误信息。
+
+4. **错误处理**：
+   - 捕获可能的异常（如文件不存在、音量设置错误等），并返回友好的错误信息。
+
+### 文件路径
+- `call_manager.py` 的路径为：`root/call/call_manager.py`
+- `MusicPlayer.py` 的路径为：`root/call/function/MusicPlayer.py`
+
+### 测试
+你可以通过以下方式测试功能是否正常：
+```python
+manager = CallManager()
+result = manager.execute_tool("play_music", {"file": "Grimes - Oblivion.ogg", "volume": 0.5})
+print(result)
+```
+
+### 下一步优化
+1. **日志记录**：添加日志功能，记录工具调用的详细信息。
+2. **多线程支持**：如果音乐播放需要异步执行，可以引入多线程。
+3. **扩展性**：为其他工具调用预留接口，方便后续扩展。
+
+如果需要进一步优化或扩展功能，请告诉我！

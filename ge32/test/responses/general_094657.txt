@@ -1,0 +1,87 @@
+你的观察非常准确！目前的代码逻辑中，`call`（工具调用的请求）本身确实没有被保存到对话历史或长期记忆中，只有工具调用的**结果**（`result`）被保存了。这可能会导致以下问题：
+
+1. **调试困难**：如果工具调用失败，无法回溯原始的调用请求（参数、函数名等）。
+2. **上下文丢失**：无法完整重现对话流程，因为缺少工具调用的触发点。
+
+---
+
+### **问题根源**
+在 `run_conversation` 函数中：
+1. **工具调用请求**（`tool_calls`）是通过 OpenAI API 返回的，但代码中仅提取了工具名称和参数，未保存原始请求。
+2. **工具调用结果**通过 `add_tool_call` 方法保存，但该方法仅记录了结果，未关联原始请求。
+
+---
+
+### **解决方案**
+需要修改代码，确保：
+1. **保存工具调用的请求**（`call`）和结果（`result`）。
+2. 在 `add_tool_call` 方法中同时记录请求和结果。
+
+#### **修改步骤**
+1. **在 `run_conversation` 中保存工具调用请求**：
+   ```python
+   if tool_calls:
+       results = []
+       for call in tool_calls:
+           tool_name = call.function.name
+           arguments = json.loads(call.function.arguments)
+           result = call_manager.execute_tool(tool_name, arguments)
+           # 保存工具调用请求和结果
+           chat_manager.add_tool_call(tool_name, arguments, result, call=call)  # 新增 call 参数
+           results.append(f"工具调用结果: {result}")
+   ```
+
+2. **更新 `add_tool_call` 方法**：
+   ```python
+   def add_tool_call(self, tool_name, arguments, result, call=None):
+       tool_call_id = f"tool_{len(self.tool_call_registry) + 1}"
+       self.tool_call_registry[tool_call_id] = {
+           "tool_name": tool_name,
+           "arguments": arguments,
+           "result": result,
+           "timestamp": datetime.now().isoformat(),
+           "status": "success" if result else "failed",
+           "call": call  # 保存原始请求
+       }
+       # 添加到长期记忆
+       if self._is_important_tool_call(tool_name, result):
+           self.long_term_memory.append({
+               "id": tool_call_id,
+               "summary": self._summarize_tool_call(tool_name, arguments, result),
+               "call": call  # 可选：长期记忆中也保存请求
+           })
+       # 立即保存到文件
+       self.save_conversation()
+   ```
+
+3. **更新 `save_conversation` 方法**：
+   ```python
+   def save_conversation(self):
+       """保存完整对话历史（包括工具调用请求和结果）"""
+       filename = f"conversation_{self.conversation_id}.json"
+       data = {
+           "history": self.history,
+           "tool_calls": list(self.tool_call_registry.values()),  # 包含 call 和 result
+       }
+       return save_file(
+           json.dumps(data, indent=2, ensure_ascii=False),
+           self.storage_dir,
+           filename
+       )
+   ```
+
+---
+
+### **验证逻辑**
+1. **检查保存的文件**：
+   - 打开生成的 `conversation_*.json` 文件，确认是否包含 `call` 字段（原始请求）。
+2. **测试工具调用失败场景**：
+   - 故意触发一个失败的工具调用，检查是否能通过 `call` 字段回溯问题。
+
+---
+
+### **代码路径**
+- **工具调用逻辑**：`main_AI.py` 中的 `run_conversation` 函数。
+- **记忆管理**：`utils/chat_manager.py` 中的 `EnhancedChatManager` 类。
+
+如果需要进一步调整或测试，可以随时告诉我！

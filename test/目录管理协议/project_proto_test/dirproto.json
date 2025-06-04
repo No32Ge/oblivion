@@ -1,0 +1,14 @@
+{
+    "visible_files": [
+        "README.md",
+        "main.py",
+        "src",
+        "docs",
+        "data",
+        "tests"
+    ],
+    "operable_files": [
+        "README.md",
+        "main.py"
+    ]
+}

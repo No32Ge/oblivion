@@ -1,0 +1,138 @@
+[
+  {
+    "timestamp": "2025-04-21T11:50:20.417781",
+    "role": "user",
+    "content": "说话",
+    "content_hash": -2794429910170827211
+  },
+  {
+    "timestamp": "2025-04-21T11:50:27.338302",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781442372085690989",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"你好！有什么我可以帮助的吗？\", \"voice_key\": \"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T11:50:27.338302",
+    "role": "tool",
+    "tool_call_id": "call_-8781442372085690989",
+    "content": "说话成功: 正在说话: 你好！有什么我可以帮..."
+  },
+  {
+    "timestamp": "2025-04-21T11:50:33.389659",
+    "role": "assistant",
+    "content": "你好！有什么我可以帮助的吗？",
+    "content_hash": -2990582382164627371
+  },
+  {
+    "timestamp": "2025-04-21T11:51:38.401266",
+    "role": "user",
+    "content": "放一首歌",
+    "content_hash": -4161530472888119090
+  },
+  {
+    "timestamp": "2025-04-21T11:51:40.920655",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781454604154229158",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T11:51:40.920655",
+    "role": "tool",
+    "tool_call_id": "call_-8781454604154229158",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-21T11:51:47.378190",
+    "role": "assistant",
+    "content": "音乐已经播放成功，现在正在播放 \"2Pac & Eminem - Bullet to the Brain\"。请享受音乐！",
+    "content_hash": -7029297609675011240
+  },
+  {
+    "timestamp": "2025-04-21T11:51:57.426163",
+    "role": "user",
+    "content": "暂停",
+    "content_hash": -2371278549927792849
+  },
+  {
+    "timestamp": "2025-04-21T11:51:58.345043",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781444193152045335",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"pause\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T11:51:58.345043",
+    "role": "tool",
+    "tool_call_id": "call_-8781444193152045335",
+    "content": "音乐暂停: 音乐暂停"
+  },
+  {
+    "timestamp": "2025-04-21T11:52:04.919057",
+    "role": "assistant",
+    "content": "音乐已经暂停。如果您需要继续播放或其他操作，请告诉我。",
+    "content_hash": 2906316818263551773
+  },
+  {
+    "timestamp": "2025-04-21T11:52:14.440751",
+    "role": "user",
+    "content": "换一首",
+    "content_hash": 8432984754415341304
+  },
+  {
+    "timestamp": "2025-04-21T11:52:15.978719",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781453676441203125",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/ALDN _ chloe moriondo - pressure.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T11:52:15.978719",
+    "role": "tool",
+    "tool_call_id": "call_-8781453676441203125",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-21T11:52:22.445882",
+    "role": "assistant",
+    "content": "已经为您更换了歌曲，现在正在播放 \"ALDN & chloe moriondo - pressure\"。请享受音乐！",
+    "content_hash": -5452037834316845265
+  }
+]

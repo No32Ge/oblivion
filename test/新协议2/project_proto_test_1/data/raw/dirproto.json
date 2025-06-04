@@ -1,0 +1,10 @@
+{
+    "inherit_parent": false,
+    "visible_files": [
+        "data1.csv"
+    ],
+    "operable_files": [
+        "data1.csv"
+    ],
+    "show_content": true
+}

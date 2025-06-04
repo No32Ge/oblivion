@@ -1,0 +1,11 @@
+{
+    "inherit_parent": true,
+    "visible_files": [
+        "module.py",
+        "config.json"
+    ],
+    "operable_files": [
+        "module.py",
+        "config.json"
+    ]
+}

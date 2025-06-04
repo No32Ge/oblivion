@@ -1,0 +1,79 @@
+从代码结构来看，问题可能出在 `main_AI.py` 文件中的 `run_conversation` 函数逻辑。以下是可能的问题点及改进建议：
+
+### 问题分析
+1. **工具调用后的处理逻辑**：
+   - 当前代码在工具调用后，仍然会继续处理响应内容（如文件创建逻辑），而不是直接返回工具调用的结果。
+   - 工具调用的结果应该优先返回，而不是等待用户输入或其他逻辑。
+
+2. **文件创建逻辑的干扰**：
+   - 文件创建逻辑（`create_file`）可能会干扰工具调用的结果输出，尤其是在工具调用后没有明确终止流程的情况下。
+
+3. **工具调用的结果未直接返回**：
+   - 工具调用的结果被记录到对话历史中，但没有直接返回给用户。
+
+### 改进建议
+以下是修改后的 `run_conversation` 函数逻辑（伪代码）：
+
+```python
+def run_conversation(user_input):
+    # 添加用户消息到历史
+    chat_manager.add_message("user", user_input)
+
+    # 构建系统提示词
+    system_prompt = "..."  # 省略原有内容
+
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            *[{"role": msg["role"], "content": msg["content"]} for msg in chat_manager.history]
+        ],
+        temperature=0.7,
+        max_tokens=8192,
+        tools=[...],  # 省略工具定义
+        tool_choice="auto"
+    )
+
+    tool_calls = response.choices[0].message.tool_calls
+    if tool_calls:
+        results = []
+        for call in tool_calls:
+            tool_name = call.function.name
+            arguments = json.loads(call.function.arguments)
+            result = call_manager.execute_tool(tool_name, arguments)
+            chat_manager.add_tool_call(tool_name, arguments, result)
+            results.append(f"工具调用结果: {result}")
+
+        # 直接返回工具调用结果
+        return "\n".join(results)
+
+    # 处理非工具调用的响应
+    result = response.choices[0].message.content
+    chat_manager.save_response(result)
+
+    # 文件创建逻辑（仅在非工具调用时执行）
+    if "create_file" in result:
+        creation_report = local_engine.process_creation_commands(result)
+        result += f"\n📂 文件创建报告:\n{creation_report}"
+
+    # 清理结果并保存
+    result = FILE_CREATION_PATTERN.sub("", result)
+    chat_manager.add_message("assistant", result)
+    chat_manager.save_conversation()
+    return result
+```
+
+### 关键改进点
+1. **工具调用优先返回**：
+   - 如果检测到工具调用，直接执行并返回结果，不再继续后续逻辑。
+   
+2. **文件创建逻辑隔离**：
+   - 文件创建逻辑仅在非工具调用时执行，避免干扰工具调用的结果。
+
+3. **结果清理与保存**：
+   - 非工具调用的响应仍然会清理并保存，但工具调用的结果会直接返回。
+
+### 文件路径
+- 修改的文件位于：`root/main_AI.py`。
+
+如果需要进一步调整或测试，请告诉我！

@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": "2025-04-24T15:21:59.617956",
+    "role": "user",
+    "content": "随便 放 一 首 音乐",
+    "content_hash": -221510402798364360
+  },
+  {
+    "timestamp": "2025-04-24T15:22:07.554427",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_c4472cfb-eadb-4c7a-b64b-2fea18b26657",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\":\"play\",\"file\":\"music/Grimes - Oblivion.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:22:07.554427",
+    "role": "tool",
+    "tool_call_id": "call_0_c4472cfb-eadb-4c7a-b64b-2fea18b26657",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T15:22:20.434048",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T15:23:53.779687",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_9aa0828b-195e-4573-aff9-1e411cf45198",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"正在播放音乐：Grimes - Oblivion。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:23:53.779687",
+    "role": "tool",
+    "tool_call_id": "call_0_9aa0828b-195e-4573-aff9-1e411cf45198",
+    "content": "说话成功: 正在说话: 正在播放音乐：Gri..."
+  },
+  {
+    "timestamp": "2025-04-24T15:25:43.197055",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_64a28f04-4b2b-4b08-aa4d-a7375f674c52",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"正在播放音乐：Grimes - Oblivion。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:25:43.197055",
+    "role": "tool",
+    "tool_call_id": "call_0_64a28f04-4b2b-4b08-aa4d-a7375f674c52",
+    "content": "说话成功: 正在说话: 正在播放音乐：Gri..."
+  },
+  {
+    "timestamp": "2025-04-24T15:25:55.793539",
+    "role": "assistant",
+    "content": "音乐已开始播放，是 Grimes 的《Oblivion》。",
+    "content_hash": -685470698154651954
+  }
+]

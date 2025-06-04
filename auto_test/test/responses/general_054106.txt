@@ -1,0 +1,29 @@
+以下是本地文件的目录结构：
+
+```plaintext
+.
+├── local_programs
+│   ├── program_010148.py
+│   ├── program_010253.py
+│   ├── program_010630.py
+│   ├── program_013057.py
+│   └── program_013515.py
+├── root
+│   ├── main_.py
+│   ├── utils
+│   │   ├── chat_manager.py
+│   │   └── file_utils.py
+│   └── templates
+│       └── program_templates.py
+└── templates
+    └── program_templates.py
+```
+
+其中包含的主要目录和文件：
+- `local_programs`：存放本地程序文件，如`program_010148.py`、`program_010253.py`等。
+- `root`：根目录，包含主程序`main_.py`、`utils`工具目录及`templates`模板目录。
+  - `utils`：包含辅助工具类，如`chat_manager.py`对话管理器和`file_utils.py`文件工具。
+  - `templates`：存放程序模板文件`program_templates.py`。
+- `templates`：存放另一个程序模板文件`program_templates.py`。
+
+这个目录结构可用于管理和组织代码文件。希望这个概览对你有帮助！如果有其他问题也欢迎继续咨询。

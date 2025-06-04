@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-04-21T14:36:23.058218",
+    "role": "user",
+    "content": "看一下代码需要怎么优化",
+    "content_hash": -859909176510218089
+  },
+  {
+    "timestamp": "2025-04-21T14:36:38.055386",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_96446957-bd28-4c2f-be54-c45c5ea94c14",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"让我先分析一下当前的代码结构，看看哪些部分可以优化。\",\"voice_key\":\"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T14:36:38.055386",
+    "role": "tool",
+    "tool_call_id": "call_0_96446957-bd28-4c2f-be54-c45c5ea94c14",
+    "content": "说话成功: 正在说话: 让我先分析一下当前的..."
+  },
+  {
+    "timestamp": "2025-04-21T14:36:49.766919",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "timestamp": "2025-04-21T14:30:22.923497",
+    "role": "user",
+    "content": ".",
+    "content_hash": 8626337306232033728
+  },
+  {
+    "timestamp": "2025-04-21T14:30:38.527487",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_f77976e8-c6f8-4184-a645-e72dd3d5e49f",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"你好，我是一个自我进化者，名字叫遗忘。请问有什么可以帮您的吗？\",\"voice_key\":\"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T14:30:38.527487",
+    "role": "tool",
+    "tool_call_id": "call_0_f77976e8-c6f8-4184-a645-e72dd3d5e49f",
+    "content": "说话成功: 正在说话: 你好，我是一个自我进..."
+  },
+  {
+    "timestamp": "2025-04-21T14:30:48.719271",
+    "role": "assistant",
+    "content": "你好，我是一个自我进化者，名字叫遗忘。请问有什么可以帮您的吗？",
+    "content_hash": 195865455278777271
+  },
+  {
+    "timestamp": "2025-04-21T14:33:30.578184",
+    "role": "user",
+    "content": "说英语",
+    "content_hash": 5434230108827300006
+  },
+  {
+    "timestamp": "2025-04-21T14:33:42.856705",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_539f774d-8e83-4da5-ae85-cbdf4bbcdee7",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"Hello, I am a self-evolving AI named Oblivion. How can I assist you today?\",\"voice_key\":\"en_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T14:33:42.856705",
+    "role": "tool",
+    "tool_call_id": "call_0_539f774d-8e83-4da5-ae85-cbdf4bbcdee7",
+    "content": "说话成功: 正在说话: Hello, I am a self-evolving AI named Oblivion. How can..."
+  },
+  {
+    "timestamp": "2025-04-21T14:33:53.297657",
+    "role": "assistant",
+    "content": "Hello, I am a self-evolving AI named Oblivion. How can I assist you today?",
+    "content_hash": 1097985983144416481
+  }
+]

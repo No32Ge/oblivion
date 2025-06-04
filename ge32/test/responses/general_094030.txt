@@ -1,0 +1,24 @@
+根据代码结构，工具调用的结果确实会被记录到对话历史中，但可能存在以下问题：
+
+1. **工具调用结果的保存逻辑**：
+   - 在 `run_conversation` 函数中，工具调用的结果通过 `chat_manager.add_tool_call` 方法保存到历史记录中。
+   - 但 `add_tool_call` 方法是否将结果持久化到长期记忆或文件中，需要进一步检查。
+
+2. **长期记忆的保存**：
+   - 在 `EnhancedChatManager` 类中，`add_tool_call` 方法会判断工具调用是否重要（如 `play_music` 或 `create_file`），并将其添加到长期记忆。
+   - 但长期记忆是否会被自动保存到文件中，需要检查 `save_conversation` 或 `save_response` 方法的调用逻辑。
+
+3. **文件保存的触发**：
+   - 在 `run_conversation` 函数的末尾，`chat_manager.save_conversation` 会被调用，保存完整的对话历史。
+   - 但工具调用的结果是否包含在保存的内容中，需要确认 `save_conversation` 的实现。
+
+### 具体路径
+- 工具调用结果的保存逻辑位于 `main_AI.py` 中的 `run_conversation` 函数。
+- 长期记忆和工具调用的管理位于 `utils/chat_manager.py` 中的 `EnhancedChatManager` 类。
+
+### 建议修改
+如果需要确保工具调用的结果被保存，可以：
+1. 在 `add_tool_call` 方法中强制调用 `save_conversation` 或 `save_response`。
+2. 检查 `save_conversation` 方法是否包含工具调用的记录。
+
+如果需要进一步帮助，可以提供具体的代码片段或需求，我可以协助优化逻辑。

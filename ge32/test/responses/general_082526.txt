@@ -1,0 +1,14 @@
+{
+  "tool_calls": [
+    {
+      "id": "call_music_001",
+      "type": "function",
+      "function": {
+        "name": "play_music",
+        "arguments": "{\"file\": \"Grimes - Oblivion.ogg\", \"volume\": 0.5}"
+      }
+    }
+  ]
+}
+
+我将为您播放音乐。请稍等，我需要确认音乐文件是否存在以及播放设备是否就绪。

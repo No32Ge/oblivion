@@ -1,0 +1,160 @@
+[
+  {
+    "timestamp": "2025-04-24T15:44:03.042700",
+    "role": "user",
+    "content": "换 一个 音色",
+    "content_hash": 5996409093522610060
+  },
+  {
+    "timestamp": "2025-04-24T15:44:15.306049",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_5ca177c7-5e37-406a-a59f-03b2f9535a2a",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"好的，我将切换音色。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:44:15.306049",
+    "role": "tool",
+    "tool_call_id": "call_0_5ca177c7-5e37-406a-a59f-03b2f9535a2a",
+    "content": "说话成功: 正在说话: 好的，我将切换音色。"
+  },
+  {
+    "timestamp": "2025-04-24T15:44:27.951651",
+    "role": "assistant",
+    "content": "音色已切换为中文女声。如果需要其他音色，请告诉我！",
+    "content_hash": 7557057028158152697
+  },
+  {
+    "timestamp": "2025-04-24T15:44:36.386439",
+    "role": "user",
+    "content": "现在 说 一句话 看看",
+    "content_hash": 2199345094750976510
+  },
+  {
+    "timestamp": "2025-04-24T15:44:50.450839",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_dd8c6d44-3284-4b34-8ef2-68bb15c57b9a",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"这是一句测试语音，当前音色为中文女声。\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:44:50.450839",
+    "role": "tool",
+    "tool_call_id": "call_0_dd8c6d44-3284-4b34-8ef2-68bb15c57b9a",
+    "content": "说话成功: 正在说话: 这是一句测试语音，当..."
+  },
+  {
+    "timestamp": "2025-04-24T15:45:03.147416",
+    "role": "assistant",
+    "content": "测试语音已播放，当前音色为中文女声。如果需要调整音色或其他功能，随时告诉我！",
+    "content_hash": -5007958457243966523
+  },
+  {
+    "timestamp": "2025-04-24T15:45:12.084887",
+    "role": "user",
+    "content": "换成 另外 一个 中文 声音",
+    "content_hash": 8743561935357683312
+  },
+  {
+    "timestamp": "2025-04-24T15:45:26.220250",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_679b94e0-89f1-4b89-bb7d-26027c84729d",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"好的，我将切换到另一个中文音色。\",\"voice_key\":\"cn_male\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:45:26.220250",
+    "role": "tool",
+    "tool_call_id": "call_0_679b94e0-89f1-4b89-bb7d-26027c84729d",
+    "content": "说话成功: 正在说话: 好的，我将切换到另一..."
+  },
+  {
+    "timestamp": "2025-04-24T15:45:40.275310",
+    "role": "assistant",
+    "content": "已切换到中文男声音色。如果需要测试或其他调整，请告诉我！",
+    "content_hash": -6311666688783216756
+  },
+  {
+    "timestamp": "2025-04-24T15:46:40.461450",
+    "role": "user",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T15:46:55.331592",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_11a368dc-be62-4359-b1cb-b835b3b76a33",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"这是一句测试语音，当前音色为中文男声。\",\"voice_key\":\"cn_male\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:46:55.331592",
+    "role": "tool",
+    "tool_call_id": "call_0_11a368dc-be62-4359-b1cb-b835b3b76a33",
+    "content": "说话成功: 正在说话: 这是一句测试语音，当..."
+  },
+  {
+    "timestamp": "2025-04-24T15:47:08.108307",
+    "role": "assistant",
+    "content": "测试语音已播放，当前音色为中文男声。如果需要进一步调整或切换其他音色，随时告诉我！",
+    "content_hash": -143884921614857715
+  },
+  {
+    "timestamp": "2025-04-24T15:48:24.045242",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_966062d7-0082-4b1e-abc1-d6f863c50bf7",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"这是一句测试语音，当前音色为中文男声。\",\"voice_key\":\"cn_male\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:48:24.045242",
+    "role": "tool",
+    "tool_call_id": "call_0_966062d7-0082-4b1e-abc1-d6f863c50bf7",
+    "content": "说话成功: 正在说话: 这是一句测试语音，当..."
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "timestamp": "2025-04-24T15:14:03.163721",
+    "role": "user",
+    "content": "hurry some music",
+    "content_hash": 4069382188652638820
+  },
+  {
+    "timestamp": "2025-04-24T15:14:05.311638",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764424268527550842",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:14:05.311638",
+    "role": "tool",
+    "tool_call_id": "call_-8764424268527550842",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-24T15:14:11.809709",
+    "role": "assistant",
+    "content": null,
+    "content_hash": -9223363242671478913
+  },
+  {
+    "timestamp": "2025-04-24T15:14:19.425124",
+    "role": "user",
+    "content": "now stop that shit",
+    "content_hash": 1563046459974921927
+  },
+  {
+    "timestamp": "2025-04-24T15:14:20.516436",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764432824103682194",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"stop\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:14:20.516436",
+    "role": "tool",
+    "tool_call_id": "call_-8764432824103682194",
+    "content": "音乐停止: 音乐停止"
+  },
+  {
+    "timestamp": "2025-04-24T15:14:26.363275",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-24T15:14:33.213987",
+    "role": "user",
+    "content": "okay continue",
+    "content_hash": -1786349537762544535
+  },
+  {
+    "timestamp": "2025-04-24T15:14:34.579140",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8764426089594069508",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"continue\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-24T15:14:34.579140",
+    "role": "tool",
+    "tool_call_id": "call_-8764426089594069508",
+    "content": "没有暂停的音乐，无法继续播放"
+  },
+  {
+    "timestamp": "2025-04-24T15:14:41.234756",
+    "role": "assistant",
+    "content": "当前没有暂停的音乐，所以无法继续播放。如果您想要播放其他音乐，请告诉我您想听的歌曲名字。",
+    "content_hash": -50845118905714714
+  },
+  {
+    "timestamp": "2025-04-24T15:14:49.598845",
+    "role": "user",
+    "content": "are you fucking serious the i",
+    "content_hash": 1380031960422162299
+  },
+  {
+    "timestamp": "2025-04-24T15:14:51.638992",
+    "role": "assistant",
+    "content": "抱歉，我可能没有完全理解您的意思。如果您有任何具体的需求或问题，请详细告诉我，我会尽力帮助您。如果您想要播放音乐，可以告诉我您想听的歌曲名字。",
+    "content_hash": 1592504846673421652
+  },
+  {
+    "timestamp": "2025-04-24T15:15:05.009892",
+    "role": "user",
+    "content": "i mean just continue and the just continue",
+    "content_hash": -933712998504039472
+  },
+  {
+    "timestamp": "2025-04-24T15:15:07.315041",
+    "role": "assistant",
+    "content": "如果您想要继续播放之前暂停的音乐，请确认是否有音乐处于暂停状态。如果没有暂停的音乐，我无法继续播放。如果您有其他音乐需求，请告诉我具体的歌曲名字，我会为您播放。",
+    "content_hash": 5141688070983487867
+  },
+  {
+    "timestamp": "2025-04-24T15:15:17.676531",
+    "role": "user",
+    "content": "just just continue bitch",
+    "content_hash": 2784203439862211978
+  },
+  {
+    "timestamp": "2025-04-24T15:15:19.698101",
+    "role": "assistant",
+    "content": "很抱歉，我目前无法继续播放音乐，因为没有任何音乐处于暂停状态。如果您有其他音乐需求或需要帮助，请告诉我具体的歌曲名字或问题，我会尽力协助您。",
+    "content_hash": 5696588707710834130
+  },
+  {
+    "timestamp": "2025-04-24T15:15:32.320746",
+    "role": "user",
+    "content": "fuck i don't want i don't want your upon each just fucking continue",
+    "content_hash": 8935163724906859195
+  },
+  {
+    "timestamp": "2025-04-24T15:15:34.827064",
+    "role": "assistant",
+    "content": "我理解您可能感到沮丧，但请放心，我会尽力帮助您。目前没有音乐处于暂停状态，所以无法继续播放。如果您有其他音乐需求，请告诉我具体的歌曲名字，我会为您播放。如果您有其他问题或需要帮助，也请随时告诉我。",
+    "content_hash": -1822956073616925547
+  },
+  {
+    "timestamp": "2025-04-24T15:15:45.437691",
+    "role": "user",
+    "content": "shut the fuck up bitch",
+    "content_hash": -3545799097807174857
+  },
+  {
+    "timestamp": "2025-04-24T15:15:47.506962",
+    "role": "assistant",
+    "content": "如果您有任何其他需求或问题，请随时告诉我，我会尽力帮助您。如果您不想继续对话，也可以随时结束。希望您能找到您需要的服务。",
+    "content_hash": 532810854461803107
+  },
+  {
+    "timestamp": "2025-04-24T15:16:31.139003",
+    "role": "user",
+    "content": "hobby",
+    "content_hash": 6493611408020815851
+  },
+  {
+    "timestamp": "2025-04-24T15:16:34.515596",
+    "role": "assistant",
+    "content": "如果您是在询问关于“爱好”的信息，那么爱好是指个人在业余时间喜欢从事的活动，这些活动可以带来乐趣和放松。常见的爱好包括阅读、绘画、音乐、运动、旅行等。如果您有特定的爱好想要深入了解，或者需要建议如何培养新的爱好，请告诉我，我会尽力提供帮助。",
+    "content_hash": 3381763743587236783
+  },
+  {
+    "timestamp": "2025-04-24T15:17:26.640456",
+    "role": "user",
+    "content": "haha",
+    "content_hash": -2798854858430291277
+  },
+  {
+    "timestamp": "2025-04-24T15:17:29.076066",
+    "role": "assistant",
+    "content": "看来您心情不错！如果您有任何问题或需要帮助，随时告诉我。我们可以聊聊您的爱好、听听音乐，或者做任何您感兴趣的事情。有什么我可以为您做的吗？",
+    "content_hash": -2682877454641450597
+  },
+  {
+    "timestamp": "2025-04-24T15:17:34.950000",
+    "role": "user",
+    "content": "it",
+    "content_hash": -6050715702225604597
+  },
+  {
+    "timestamp": "2025-04-24T15:17:37.396084",
+    "role": "assistant",
+    "content": "您提到了 \"it\"，但我不太确定您具体指的是什么。如果您有任何具体的问题或需求，比如想要了解某个话题、需要帮助解决某个问题，或者想要进行某种活动，请详细告诉我，我会尽力为您提供帮助。",
+    "content_hash": 492425909292755874
+  }
+]

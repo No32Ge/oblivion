@@ -1,0 +1,61 @@
+在现有代码结构中，执行本地代码的方案主要通过以下模块实现（安全且不会覆盖现有文件）：
+
+1. **核心执行模块**  
+   - 路径: `./core/local_engine.py`  
+   - 功能:  
+     ```python
+     class LocalProgramEngine:
+         def execute_program(self, program_path, args=None):
+             """安全执行本地Python程序（通过子进程隔离）"""
+             cmd = [sys.executable, program_path]  # 使用系统Python解释器
+             result = subprocess.run(cmd, capture_output=True, text=True)
+             return {
+                 "exit_code": result.returncode,
+                 "output": result.stdout,  # 获取标准输出
+                 "error": result.stderr    # 获取错误输出
+             }
+     ```
+
+2. **沙箱执行模块**  
+   - 路径: `./core/sandbox.py`  
+   - 功能:  
+     ```python
+     class ExecutionSandbox:
+         def safe_execute(self, program_path):
+             """在Docker容器中执行（完全隔离）"""
+             container = self.client.containers.run(
+                 "python:3.9-slim",
+                 f"python {program_path}",
+                 volumes={...},  # 只读挂载
+                 remove=True  # 执行后自动销毁容器
+             )
+             return container.logs()
+     ```
+
+3. **动态代码执行API**  
+   - 路径: `./core/deepmind_core.py` (CoreAPI类)  
+   - 关键方法:  
+     ```python
+     def execute_code(self, code: str):
+         """动态执行代码片段（安全模式）"""
+         locals_dict = {}
+         exec(code, {"__builtins__": None}, locals_dict)  # 限制内置函数
+         return locals_dict.get('result')
+     ```
+
+▶ **当前使用流程**  
+1. 将代码保存到 `./local_programs/` 目录（如 `hello.py`）  
+2. 通过以下方式调用：  
+   ```python
+   from core.local_engine import LocalProgramEngine
+   engine = LocalProgramEngine()
+   print(engine.execute_program("./local_programs/hello.py"))
+   ```
+
+▶ **安全特性**  
+- ✅ 子进程隔离  
+- ✅ 容器化选项  
+- ✅ 无文件覆盖风险  
+- ✅ 输出/错误分离捕获  
+
+需要我演示具体使用案例吗？或是您希望增强某些安全措施？

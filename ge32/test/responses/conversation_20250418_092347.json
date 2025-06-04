@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-04-18T09:24:10.198025",
+    "role": "user",
+    "content": "播放音乐，音量最大，随便一首歌",
+    "content_hash": 2938576407585868929
+  },
+  {
+    "timestamp": "2025-04-18T09:24:20.013565",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-04-18T10:55:11.567298",
+    "role": "user",
+    "content": "放歌，随便放",
+    "content_hash": 3709578864269988593
+  },
+  {
+    "timestamp": "2025-04-18T10:55:17.003118",
+    "role": "tool",
+    "tool_call_id": "call_0_b5ce7e20-9015-459d-849d-242d9b676dbc",
+    "content": "音乐播放成功: 播放中"
+  }
+]

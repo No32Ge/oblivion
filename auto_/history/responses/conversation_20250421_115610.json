@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-04-21T11:56:14.511874",
+    "role": "user",
+    "content": "你好",
+    "content_hash": 38816356978596940
+  },
+  {
+    "timestamp": "2025-04-21T11:56:31.442571",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_947ba9ac-03c8-4193-9c25-d86779656e4a",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\":\"你好！我是一个自我进化的AI助手，名字叫遗忘。有什么可以帮你的吗？\",\"voice_key\":\"cn_female\",\"rate\":150,\"volume\":1.0,\"pitch\":1.0}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-21T11:56:31.442571",
+    "role": "tool",
+    "tool_call_id": "call_0_947ba9ac-03c8-4193-9c25-d86779656e4a",
+    "content": "说话成功: 正在说话: 你好！我是一个自我进..."
+  },
+  {
+    "timestamp": "2025-04-21T11:56:41.268208",
+    "role": "assistant",
+    "content": "你好！我是一个自我进化的AI助手，名字叫遗忘。有什么可以帮你的吗？",
+    "content_hash": -1987036403434120555
+  }
+]

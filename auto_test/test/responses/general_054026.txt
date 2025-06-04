@@ -1,0 +1,53 @@
+根据你提供的代码结构和信息，我们可以尝试找到与“创建失败调试.txt”相关的数据和代码位置。以下是可能相关的文件和代码段：
+
+1. **文件创建函数 `save_file`**：
+   - 位置：`utils/file_utils.py`
+   - 代码：
+     ```python
+     def save_file(content, dir_path, filename):
+         """通用文件保存方法"""
+         os.makedirs(dir_path, exist_ok=True)
+         try:
+             filepath = os.path.join(dir_path, filename)
+             with open(filepath, 'w', encoding='utf-8') as f:
+                 f.write(content)
+             return filepath
+         except Exception as e:
+             print(f"❌ 保存文件失败: {e}")
+             return None
+     ```
+   - 这个函数负责保存文件，如果出现异常会打印错误信息。
+
+2. **调用 `save_file` 的函数 `save_response`**：
+   - 位置：`utils/chat_manager.py`
+   - 代码：
+     ```python
+     def save_response(self, response, category="general"):
+         """单独保存AI响应"""
+         filename = f"{category}_{datetime.now().strftime('%H%M%S')}.txt"
+         return save_file(response, self.storage_dir, filename)
+     ```
+   - 这个函数调用 `save_file` 保存AI响应。如果保存失败，会返回 `None`。
+
+3. **调用 `save_response` 的代码**：
+   - 位置：`main.py`
+   - 代码：
+     ```python
+     chat_manager.save_response(result)
+     ```
+   - 这里调用 `save_response` 保存AI响应。
+
+4. **错误信息输出**：
+   - 在 `save_file` 函数中，如果文件保存失败，会打印错误信息，格式为：
+     ```
+     ❌ 保存文件失败: [错误信息]
+     ```
+   - 你可以查看程序运行时的输出，找到类似这样的错误信息。
+
+为了调试“创建失败调试.txt”的问题，你可以：
+
+1. 检查 `save_file` 函数的调用位置和参数是否正确。
+2. 查看程序运行时的输出，找到 `❌ 保存文件失败` 的错误信息，分析具体原因。
+3. 检查 `dir_path` 和 `filename` 是否有效，确保程序有权限写入指定目录。
+
+如果需要进一步的帮助，可以提供更多上下文信息，例如程序调用 `save_file` 的具体代码和参数。

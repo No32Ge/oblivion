@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2025-04-18T10:37:06.576185",
+    "role": "user",
+    "content": "放音乐",
+    "content_hash": 555821224493945307
+  },
+  {
+    "timestamp": "2025-04-18T10:37:13.670995",
+    "role": "assistant",
+    "content": "请告诉我音乐文件的路径和音量（0.0-1.0），我将为你播放。例如：\n\n- 文件路径：`Grimes - Oblivion.ogg`\n- 音量：`0.5`",
+    "content_hash": 8575649742525869646
+  },
+  {
+    "timestamp": "2025-04-18T10:37:24.081268",
+    "role": "user",
+    "content": "都可以",
+    "content_hash": 3774685383326669846
+  },
+  {
+    "timestamp": "2025-04-18T10:37:29.028943",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_0_e2a6811b-ae88-425e-ab48-63641c721084",
+        "function": {
+          "name": "play_music",
+          "arguments": {
+            "file": "Grimes - Oblivion.ogg",
+            "volume": 0.5
+          }
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-18T10:37:29.028943",
+    "role": "tool",
+    "tool_call_id": "call_0_e2a6811b-ae88-425e-ab48-63641c721084",
+    "content": null
+  },
+  {
+    "timestamp": "2025-04-18T10:37:29.504268",
+    "role": "tool",
+    "tool_call_id": "call_0_e2a6811b-ae88-425e-ab48-63641c721084",
+    "content": "音乐播放成功: 播放中"
+  }
+]

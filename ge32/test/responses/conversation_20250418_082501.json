@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-04-18T08:25:16.079384",
+    "role": "user",
+    "content": "播放歌",
+    "content_hash": -1868280594845034633
+  },
+  {
+    "timestamp": "2025-04-18T08:25:26.448264",
+    "role": "assistant",
+    "content": "{\n  \"tool_calls\": [\n    {\n      \"id\": \"call_music_001\",\n      \"type\": \"function\",\n      \"function\": {\n        \"name\": \"play_music\",\n        \"arguments\": \"{\\\"file\\\": \\\"Grimes - Oblivion.ogg\\\", \\\"volume\\\": 0.5}\"\n      }\n    }\n  ]\n}\n\n我将为您播放音乐。请稍等，我需要确认音乐文件是否存在以及播放设备是否就绪。",
+    "content_hash": -4854078361773797438
+  }
+]

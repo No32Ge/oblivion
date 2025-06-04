@@ -1,0 +1,292 @@
+[
+  {
+    "timestamp": "2025-04-19T11:46:15.078498",
+    "role": "user",
+    "content": "说话",
+    "content_hash": 710442562170997449
+  },
+  {
+    "timestamp": "2025-04-19T11:46:21.794363",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781460960706556969",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"你好，请问有什么可以帮助你的吗？\", \"voice_key\": \"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:46:21.794363",
+    "role": "tool",
+    "tool_call_id": "call_-8781460960706556969",
+    "content": "说话成功: 正在说话: 你好，请问有什么可以..."
+  },
+  {
+    "timestamp": "2025-04-19T11:46:28.135638",
+    "role": "assistant",
+    "content": "你好，请问有什么可以帮助你的吗？如果你需要播放音乐或者有其他问题，随时告诉我！",
+    "content_hash": -6928880683732955771
+  },
+  {
+    "timestamp": "2025-04-19T11:48:31.422309",
+    "role": "user",
+    "content": "讲个故事",
+    "content_hash": 8989619036215628471
+  },
+  {
+    "timestamp": "2025-04-19T11:49:15.170319",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781447835284772347",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"从前，有一个小村庄，村庄里住着一个聪明的小男孩。这个小男孩非常喜欢探险，有一天，他决定去森林里寻找传说中的宝藏。他带上了地图和背包，踏上了冒险的旅程。在森林里，他遇到了各种奇妙的生物，有的友好，有的危险。经过一番努力，他终于找到了宝藏，但也明白了友谊和勇气的重要性。这个故事告诉我们，勇敢和智慧是通往成功的钥匙。\", \"voice_key\": \"cn_female\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:49:15.170319",
+    "role": "tool",
+    "tool_call_id": "call_-8781447835284772347",
+    "content": "说话成功: 正在说话: 从前，有一个小村庄，..."
+  },
+  {
+    "timestamp": "2025-04-19T11:49:23.321320",
+    "role": "assistant",
+    "content": "从前，有一个小村庄，村庄里住着一个聪明的小男孩。这个小男孩非常喜欢探险，有一天，他决定去森林里寻找传说中的宝藏。他带上了地图和背包，踏上了冒险的旅程。在森林里，他遇到了各种奇妙的生物，有的友好，有的危险。经过一番努力，他终于找到了宝藏，但也明白了友谊和勇气的重要性。这个故事告诉我们，勇敢和智慧是通往成功的钥匙。",
+    "content_hash": 7355364004108586965
+  },
+  {
+    "timestamp": "2025-04-19T11:49:25.926258",
+    "role": "user",
+    "content": "语速快一点，最快",
+    "content_hash": 8693966379885068017
+  },
+  {
+    "timestamp": "2025-04-19T11:49:50.152061",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781453435922921281",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"从前，有一个小村庄，村庄里住着一个聪明的小男孩。这个小男孩非常喜欢探险，有一天，他决定去森林里寻找传说中的宝藏。他带上了地图和背包，踏上了冒险的旅程。在森林里，他遇到了各种奇妙的生物，有的友好，有的危险。经过一番努力，他终于找到了宝藏，但也明白了友谊和勇气的重要性。这个故事告诉我们，勇敢和智慧是通往成功的钥匙。\", \"voice_key\": \"cn_female\", \"rate\": 300}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:49:50.152061",
+    "role": "tool",
+    "tool_call_id": "call_-8781453435922921281",
+    "content": "说话成功: 正在说话: 从前，有一个小村庄，..."
+  },
+  {
+    "timestamp": "2025-04-19T11:50:01.763903",
+    "role": "user",
+    "content": "说英语，快一点",
+    "content_hash": 208496295710056678
+  },
+  {
+    "timestamp": "2025-04-19T11:50:22.911278",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781453367203436261",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"Once upon a time, there was a small village where a smart little boy lived. This boy loved adventures. One day, he decided to go into the forest to find the legendary treasure. He took a map and a backpack and embarked on his journey. In the forest, he encountered various wonderful creatures, some friendly and some dangerous. After much effort, he finally found the treasure, but he also understood the importance of friendship and courage. This story tells us that bravery and wisdom are the keys to success.\", \"voice_key\": \"en_female\", \"rate\": 300}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:50:22.911278",
+    "role": "tool",
+    "tool_call_id": "call_-8781453367203436261",
+    "content": "说话成功: 正在说话: Once upon a time, there was a small village where..."
+  },
+  {
+    "timestamp": "2025-04-19T11:50:31.320888",
+    "role": "assistant",
+    "content": "Once upon a time, there was a small village where a smart little boy lived. This boy loved adventures. One day, he decided to go into the forest to find the legendary treasure. He took a map and a backpack and embarked on his journey. In the forest, he encountered various wonderful creatures, some friendly and some dangerous. After much effort, he finally found the treasure, but he also understood the importance of friendship and courage. This story tells us that bravery and wisdom are the keys to success.",
+    "content_hash": 7565422322961894471
+  },
+  {
+    "timestamp": "2025-04-19T11:50:35.587155",
+    "role": "user",
+    "content": "换个性别",
+    "content_hash": -7322807906126096499
+  },
+  {
+    "timestamp": "2025-04-19T11:50:57.144252",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781458143207667260",
+        "function": {
+          "name": "speak",
+          "arguments": "{\"text\": \"Once upon a time, there was a small village where a smart little girl lived. This girl loved adventures. One day, she decided to go into the forest to find the legendary treasure. She took a map and a backpack and embarked on her journey. In the forest, she encountered various wonderful creatures, some friendly and some dangerous. After much effort, she finally found the treasure, but she also understood the importance of friendship and courage. This story tells us that bravery and wisdom are the keys to success.\", \"voice_key\": \"en_male\", \"rate\": 300}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:50:57.144252",
+    "role": "tool",
+    "tool_call_id": "call_-8781458143207667260",
+    "content": "说话成功: 正在说话: Once upon a time, there was a small village where..."
+  },
+  {
+    "timestamp": "2025-04-19T11:51:05.721591",
+    "role": "assistant",
+    "content": "Once upon a time, there was a small village where a smart little girl lived. This girl loved adventures. One day, she decided to go into the forest to find the legendary treasure. She took a map and a backpack and embarked on her journey. In the forest, she encountered various wonderful creatures, some friendly and some dangerous. After much effort, she finally found the treasure, but she also understood the importance of friendship and courage. This story tells us that bravery and wisdom are the keys to success.",
+    "content_hash": -4017807242979388537
+  },
+  {
+    "timestamp": "2025-04-19T11:51:08.516161",
+    "role": "user",
+    "content": "放首歌",
+    "content_hash": 3654829596654308485
+  },
+  {
+    "timestamp": "2025-04-19T11:51:10.526308",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781449347113481907",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"play\", \"file\": \"music/2Pac _ Eminem - Bullet to the Brain.ogg\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:51:10.526308",
+    "role": "tool",
+    "tool_call_id": "call_-8781449347113481907",
+    "content": "音乐播放成功: 播放中"
+  },
+  {
+    "timestamp": "2025-04-19T11:51:17.544432",
+    "role": "assistant",
+    "content": "音乐已经播放成功，正在播放《2Pac & Eminem - Bullet to the Brain》。希望你喜欢这首歌！如果有其他需要，随时告诉我。",
+    "content_hash": -436126061506075500
+  },
+  {
+    "timestamp": "2025-04-19T11:51:26.179786",
+    "role": "user",
+    "content": "降低音量",
+    "content_hash": -7706572528270683624
+  },
+  {
+    "timestamp": "2025-04-19T11:51:27.497183",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781462335096280243",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"setVolume\", \"volume\": 0.5}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:51:27.497183",
+    "role": "tool",
+    "tool_call_id": "call_-8781462335096280243",
+    "content": "音量设置成功: 音量已设置为 50.0%"
+  },
+  {
+    "timestamp": "2025-04-19T11:51:34.292549",
+    "role": "assistant",
+    "content": "音量已经成功降低到50%。如果你需要进一步调整或有其他需求，请随时告诉我！",
+    "content_hash": 2639363314909304103
+  },
+  {
+    "timestamp": "2025-04-19T11:51:38.841219",
+    "role": "assistant",
+    "content": "",
+    "content_hash": 0
+  },
+  {
+    "timestamp": "2025-04-19T11:51:46.361550",
+    "role": "assistant",
+    "content": "播放其他歌曲",
+    "content_hash": -2012829882551845799
+  },
+  {
+    "timestamp": "2025-04-19T11:51:59.955565",
+    "role": "user",
+    "content": "我说讲个故事",
+    "content_hash": -2063308372721017124
+  },
+  {
+    "timestamp": "2025-04-19T11:52:06.511732",
+    "role": "assistant",
+    "content": "好的，我来给你讲一个故事。\n\n从前，在一个遥远的王国里，有一位年轻的王子，他名叫艾登。艾登王子聪明勇敢，深受百姓的爱戴。然而，王国附近有一座神秘的森林，传说中森林深处住着一条恶龙，经常出来骚扰附近的村庄。\n\n为了保护百姓，艾登王子决定亲自前往森林，寻找并击败这条恶龙。他带上了最锋利的剑和最坚固的盾牌，踏上了冒险的旅程。\n\n在森林里，艾登王子遇到了各种艰难险阻，但他凭借智慧和勇气，一一克服了困难。最终，他来到了恶龙的巢穴。恶龙非常强大，但艾登王子毫不畏惧，与恶龙展开了一场激烈的战斗。\n\n经过一番苦战，艾登王子终于战胜了恶龙，解救了被囚禁的村民们。他带着胜利的消息回到了王国，受到了热烈的欢迎和崇高的敬意。\n\n这个故事告诉我们，勇敢和智慧是克服困难、保护他人的重要品质。希望你喜欢这个故事！如果有其他问题或需要，随时告诉我。",
+    "content_hash": 5170479383776249158
+  },
+  {
+    "timestamp": "2025-04-19T11:52:50.884014",
+    "role": "user",
+    "content": "暂停歌曲",
+    "content_hash": 3071828266933178558
+  },
+  {
+    "timestamp": "2025-04-19T11:52:52.232215",
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_-8781443609036379852",
+        "function": {
+          "name": "music_control",
+          "arguments": "{\"action\": \"pause\"}"
+        },
+        "type": "function",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-04-19T11:52:52.232215",
+    "role": "tool",
+    "tool_call_id": "call_-8781443609036379852",
+    "content": "音乐暂停: 音乐暂停"
+  },
+  {
+    "timestamp": "2025-04-19T11:52:58.753791",
+    "role": "assistant",
+    "content": "音乐已经暂停。如果你需要继续播放或有其他需求，请随时告诉我！",
+    "content_hash": -7548684243197281009
+  }
+]
